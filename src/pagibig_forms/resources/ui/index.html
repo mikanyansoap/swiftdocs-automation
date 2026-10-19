@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="app-token" content="__APP_TOKEN__">
+  <title>Pag-IBIG Forms</title>
+  <link rel="stylesheet" href="vendor/fonts.css">
+  <link rel="stylesheet" href="vendor/icons.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-primary: #F5F7FB;
+      --bg-secondary: #FFFFFF;
+      --glass-surface: #FFFFFF;
+      --glass-surface-hover: #F1F5F9;
+      --glass-border: #E2E8F0;
+      --glass-border-focus: rgba(79, 70, 229, 0.55);
+      --glass-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 6px 20px rgba(15, 23, 42, 0.06);
+
+      --accent-primary: #4F46E5;
+      --accent-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      --accent-emerald: #059669;
+      --accent-emerald-glow: rgba(5, 150, 105, 0.22);
+      --accent-blue: #2563EB;
+      --accent-blue-glow: rgba(37, 99, 235, 0.22);
+      --accent-amber: #B45309;
+
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-dim: #64748B;
+
+      --input-bg: #FFFFFF;
+      --readonly-bg: #F1F5F9;
+      --soft-fill: rgba(15, 23, 42, 0.03);
+      --soft-border: rgba(15, 23, 42, 0.08);
+      --preview-bg: #E2E8F0;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-primary);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-panel {
+      background: var(--glass-surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .glass-card {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      transition: all 0.2s ease;
+    }
+    .glass-card:hover {
+      background: var(--glass-surface-hover);
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+
+    /* Top Navbar */
+    header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1100px) {
+      header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      .brand-logo {
+        height: 40px;
+      }
+      .header-actions {
+        flex-wrap: wrap;
+      }
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
+      color: #FFF;
+    }
+
+    .brand-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .brand-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn i.fi, .search-icon i.fi {
+      line-height: 1;
+      display: inline-flex;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #FFF;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--glass-surface);
+      border-color: var(--glass-border);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      background: var(--glass-surface-hover);
+      border-color: #CBD5E1;
+    }
+    .btn-emerald {
+      background: var(--accent-emerald);
+      color: #FFF;
+      box-shadow: 0 4px 16px var(--accent-emerald-glow);
+    }
+    .btn-emerald:hover {
+      box-shadow: 0 6px 22px var(--accent-emerald-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      padding: 24px 32px;
+      max-width: 1560px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+    }
+
+    /* Left Sidebar: Buyer List */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: calc(100vh - 120px);
+      position: sticky;
+      top: 88px;
+    }
+
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px 10px 38px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--accent-primary);
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .buyer-list {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 4px;
+    }
+    .buyer-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .buyer-list::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: var(--radius-full);
+    }
+
+    .buyer-item {
+      padding: 12px 14px;
+      cursor: pointer;
+      position: relative;
+    }
+    .buyer-item.active {
+      background: #EEF2FF;
+      border-color: var(--accent-primary);
+    }
+    .buyer-item-name {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .buyer-item-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-affordable {
+      background: #ECFDF5;
+      color: #047857;
+      border: 1px solid #A7F3D0;
+    }
+    .badge-enduser {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+    }
+
+    /* Main Workspace / Edit Form */
+    .workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+    }
+    .buyer-title-group h2 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .buyer-title-group p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--glass-border);
+      padding: 0 24px 12px 24px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--accent-primary);
+      background: #EEF2FF;
+    }
+
+    .tab-content {
+      padding: 20px 24px;
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Grid Form */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .form-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+    .form-group label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      background: var(--input-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--glass-border-focus);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+    textarea.form-control {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    /* Output & Action Section */
+    .actions-panel {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .stage-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stage-switch select {
+      background: var(--input-bg);
+      color: var(--text-main);
+      border: 1px solid var(--glass-border);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* PDF Preview Section */
+    .preview-panel {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-canvas-container {
+      background: var(--preview-bg);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 480px;
+      overflow: auto;
+      border: 1px solid var(--glass-border);
+    }
+    #pdf-canvas {
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.18);
+      border-radius: 4px;
+      max-width: 100%;
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .form-item-card {
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: var(--radius-sm);
+      background: var(--soft-fill);
+      border: 1px solid var(--soft-border);
+    }
+    .form-item-title {
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 160px;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-backdrop.show {
+      display: flex;
+    }
+    .modal-box {
+      width: 520px;
+      max-width: 90vw;
+      padding: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+    }
+  
+    /* ---- App-only additions ---- */
+    /* Speed: blur effects and a fixed page background make the window repaint on every scroll */
+    .glass-panel, header, .modal-backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    header { background: #FFFFFF; }
+    .modal-backdrop { background: rgba(15, 23, 42, 0.45); }
+    body { background-attachment: scroll; }
+    .glass-panel, .glass-card, .btn { transition-property: background-color, border-color, box-shadow, color; }
+    body { font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; }
+    textarea.form-control { font-family: Consolas, 'Courier New', monospace; }
+    #editor { display: flex; flex-direction: column; gap: 20px; }
+    .notice-bar {
+      margin: 12px 32px 0; padding: 10px 14px; border-radius: var(--radius-sm);
+      background: #FFFBEB; border: 1px solid #FDE68A; color: #92400E; font-size: 13px;
+    }
+    .empty-state { padding: 48px 32px; text-align: center; }
+    .empty-state h2 { font-size: 18px; margin-bottom: 8px; }
+    .empty-state p { color: var(--text-muted); font-size: 13px; }
+    .list-empty { color: var(--text-muted); font-size: 12px; text-align: center; padding: 18px 0; }
+    .badge-pending { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+    .badge-dirty { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+    .btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+    .btn-small { font-size: 11px; padding: 5px 10px; }
+    .form-code { font-size: 10px; color: var(--text-dim); }
+    .form-code.draft { color: #B45309; font-weight: 700; }
+    .preview-canvas-container { flex-direction: column; }
+    .modal-wide { width: 720px; }
+    .settings-scroll { max-height: 62vh; overflow-y: auto; padding-right: 6px; display: flex; flex-direction: column; gap: 12px; }
+    .settings-section { font-size: 12px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px; }
+    .input-row { display: flex; gap: 8px; }
+    .input-row .form-control { flex: 1; min-width: 0; }
+    .message-body { font-size: 13px; color: var(--text-main); line-height: 1.5; max-height: 55vh; overflow-y: auto; }
+    .message-body ul { margin: 10px 0 0 18px; }
+    .message-body li { margin-bottom: 4px; }
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); opacity: 0;
+      background: #0F172A; color: #FFF; padding: 10px 18px; border-radius: var(--radius-full);
+      font-size: 13px; font-weight: 600; box-shadow: var(--glass-shadow); transition: all 0.25s ease;
+      pointer-events: none; z-index: 2000;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .setup-box { width: 760px; }
+    .setup-head { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; }
+    .setup-logo { height: 46px; width: auto; flex-shrink: 0; }
+    .setup-head h3 { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+    .setup-head p { font-size: 13px; color: var(--text-muted); }
+    .setup-step { display: flex; gap: 14px; padding: 14px; border: 1px solid var(--glass-border); border-radius: var(--radius-sm); }
+    .step-num {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: var(--radius-full); background: #EEF2FF;
+      color: var(--accent-primary); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center;
+    }
+    .step-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+    .step-title { font-weight: 700; font-size: 14px; }
+    .step-hint { font-size: 12px; color: var(--text-muted); }
+    .optional { font-weight: 500; font-size: 12px; color: var(--text-dim); }
+    .choice-row { display: flex; flex-direction: column; gap: 6px; }
+    .choice { font-size: 13px; display: flex; gap: 8px; align-items: center; cursor: pointer; }
+    .choice span { color: var(--text-dim); font-size: 12px; }
+    .setup-problems {
+      margin-top: 12px; padding: 10px 14px; border-radius: var(--radius-sm);
+      background: #FEF2F2; border: 1px solid #FECACA; color: #B91C1C; font-size: 13px;
+    }
+    .setup-problems ul { margin: 6px 0 0 18px; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header>
+    <div class="brand">
+      <img class="brand-logo" src="logo.png" alt="SwiftDocs Services &amp; Trade OPC">
+      <div class="brand-text">
+        <h1>Pag-IBIG Forms Automation</h1>
+        <p>Summerfield Resources · Bloomfield Terraces, Morong, Rizal</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" onclick="chooseExcel()" title="Choose which BookData.xlsx to use">
+        <i class="fi fi-rs-folder-open" aria-hidden="true"></i> Load Excel
+      </button>
+      <button class="btn btn-secondary" onclick="reloadBuyers(true)" title="Read BookData.xlsx again">
+        <i class="fi fi-rs-refresh" aria-hidden="true"></i> Reload
+      </button>
+      <button class="btn btn-secondary" onclick="openSettingsModal()">
+        <i class="fi fi-rs-settings" aria-hidden="true"></i> Settings
+      </button>
+    </div>
+  </header>
+
+  <div id="notice-bar" class="notice-bar" style="display: none;"></div>
+
+  <main>
+    <!-- Left Sidebar: Buyer List & Controls -->
+    <aside class="sidebar glass-panel" style="padding: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700; font-size: 14px;">Buyers Directory</span>
+        <span id="buyer-count" class="badge" style="background: #F1F5F9; color: var(--text-muted);">0 Buyers</span>
+      </div>
+
+      <div class="search-box">
+        <span class="search-icon"><i class="fi fi-rs-search" aria-hidden="true"></i></span>
+        <input type="text" id="search-input" placeholder="Search by name, co-borrower, block, lot, TCT..." oninput="renderBuyerList()">
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-primary" style="flex: 1; font-size: 12px; padding: 7px 10px;" onclick="addNewBuyer()">
+          <i class="fi fi-rs-user-add" aria-hidden="true"></i> New Buyer
+        </button>
+        <button class="btn btn-secondary" style="font-size: 12px; padding: 7px 10px;" onclick="openHlaModal()">
+          <i class="fi fi-rs-cloud-upload" aria-hidden="true"></i> HLA Scan
+        </button>
+      </div>
+
+      <div class="buyer-list" id="buyer-list-container"></div>
+    </aside>
+
+    <!-- Main Workspace / Form Editor -->
+    <section class="workspace" id="workspace">
+      <div id="empty-state" class="glass-panel empty-state">
+        <h2>No buyer selected</h2>
+        <p>Pick a buyer on the left, or start a new one with <b>New Buyer</b> or <b>HLA Scan</b>.</p>
+      </div>
+
+      <div id="editor" style="display: none; flex-direction: column; gap: 20px;">
+        <!-- Buyer Header Card -->
+        <div class="glass-panel form-header-bar">
+          <div class="buyer-title-group">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
+              <h2 id="view-principal-name">NEW BUYER</h2>
+              <span id="program-badge" class="badge badge-pending">Enter loanable amount</span>
+              <span id="dirty-badge" class="badge badge-dirty" style="display: none;">Unsaved changes</span>
+            </div>
+            <p id="view-property-line"></p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-emerald" id="save-btn" onclick="saveBuyer()">
+              <i class="fi fi-rs-disk" aria-hidden="true"></i> Save to Excel
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="glass-panel" style="padding: 0;">
+          <div class="tabs" style="padding-top: 16px;">
+            <button class="tab-btn active" data-tab="parties" onclick="switchTab('parties')">1. Parties & Property</button>
+            <button class="tab-btn" data-tab="financials" onclick="switchTab('financials')">2. Financials & Amortization</button>
+            <button class="tab-btn" data-tab="techdesc" onclick="switchTab('techdesc')">3. Technical Description</button>
+            <button class="tab-btn" data-tab="notary" onclick="switchTab('notary')">4. Notary & Attorney-in-Fact</button>
+          </div>
+
+          <!-- Tab 1: Parties & Property -->
+          <div id="tab-parties" class="tab-content active">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Principal Borrower (Col A)</label>
+                <input type="text" id="f-principal" class="form-control" placeholder="FIRST MIDDLE LAST">
+              </div>
+              <div class="form-group">
+                <label>Marital Status & Spouse (Col B)</label>
+                <input type="text" id="f-status" class="form-control" placeholder="Single or Married to FULL NAME">
+              </div>
+              <div class="form-group">
+                <label>Co-Borrower (Col C)</label>
+                <input type="text" id="f-co-borrower" class="form-control" placeholder="N/A if none">
+              </div>
+              <div class="form-group">
+                <label>Co-Borrower Status</label>
+                <input type="text" id="f-co-status" class="form-control" placeholder="Single or Married to FULL NAME">
+              </div>
+              <div class="form-group full-width">
+                <label>Present Address (Col D)</label>
+                <input type="text" id="f-address" class="form-control">
+              </div>
+              <div class="form-group full-width">
+                <label>Co-Borrower Address</label>
+                <input type="text" id="f-co-address" class="form-control" placeholder="Leave blank if same as principal">
+              </div>
+              <div class="form-group">
+                <label>Block & Lot (Col E)</label>
+                <input type="text" id="f-block-lot" class="form-control" placeholder="e.g. BLOCK 7 LOT 14">
+              </div>
+              <div class="form-group">
+                <label>Title Number (TCT) (Col F)</label>
+                <input type="text" id="f-title-no" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>TIN Principal (Col M)</label>
+                <input type="text" id="f-tin-principal" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>TIN Co-Borrower (Col N)</label>
+                <input type="text" id="f-tin-co" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>TIN Spouse (Col O)</label>
+                <input type="text" id="f-tin-spouse" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="f-email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>House Type</label>
+                <input type="text" id="f-house-type" class="form-control" placeholder="e.g. TOWNHOUSE">
+              </div>
+              <div class="form-group">
+                <label>Lot Area (sqm)</label>
+                <input type="text" inputmode="decimal" id="f-lot-area" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Financials & Amortization -->
+          <div id="tab-financials" class="tab-content">
+            <div class="form-grid cols-3">
+              <div class="form-group">
+                <label>Total Consideration (Price) (Col I)</label>
+                <input type="text" inputmode="decimal" id="f-consideration" class="form-control" placeholder="e.g. 1,150,000.00">
+              </div>
+              <div class="form-group">
+                <label>Approved Loanable Amount (Col J)</label>
+                <input type="text" inputmode="decimal" id="f-loanable" class="form-control" placeholder="e.g. 850,000.00">
+              </div>
+              <div class="form-group">
+                <label>Calculated Equity (Price - Loan)</label>
+                <input type="text" id="f-equity" class="form-control" readonly style="background: var(--readonly-bg); color: #047857; font-weight: 700;">
+              </div>
+              <div class="form-group">
+                <label>Interest Rate (Col H)</label>
+                <input type="text" id="f-interest-rate" class="form-control" placeholder="e.g. 6.25%">
+              </div>
+              <div class="form-group">
+                <label>Loan Term (Years)</label>
+                <input type="text" inputmode="numeric" id="f-loan-term" class="form-control" placeholder="30">
+              </div>
+              <div class="form-group">
+                <label>Re-pricing Period (Years)</label>
+                <input type="text" inputmode="numeric" id="f-repricing" class="form-control" placeholder="1">
+              </div>
+              <div class="form-group">
+                <label>MRI / SRI Monthly</label>
+                <input type="text" inputmode="decimal" id="f-mri" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Non-Life Monthly</label>
+                <input type="text" inputmode="decimal" id="f-nonlife" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Principal & Interest (P&I)</label>
+                <input type="text" inputmode="decimal" id="f-pi" class="form-control">
+              </div>
+            </div>
+            <div style="margin-top: 14px; padding: 12px; background: #EEF2FF; border-radius: var(--radius-sm); border: 1px solid #C7D2FE;">
+              <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Loanable amount as printed on the forms:</span>
+              <p id="amount-words-preview" style="font-size: 13px; font-weight: 600; margin-top: 4px; color: var(--text-main);">-</p>
+            </div>
+          </div>
+
+          <!-- Tab 3: Technical Description -->
+          <div id="tab-techdesc" class="tab-content">
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label>Technical Description (Col G) - printed 2 inches from the left edge in Courier</label>
+                <textarea id="f-techdesc" class="form-control" rows="6"></textarea>
+              </div>
+              <div class="form-group full-width">
+                <label>Technical Description Continued (Col K)</label>
+                <textarea id="f-techdesc-cont" class="form-control" rows="3"></textarea>
+              </div>
+              <div class="form-group full-width">
+                <label>Short Form (used in the Deed of Absolute Sale and LMAs, no annex)</label>
+                <textarea id="f-techdesc-short" class="form-control" rows="5" readonly style="background: var(--readonly-bg); color: var(--text-muted);"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Notary & Attorney-in-Fact -->
+          <div id="tab-notary" class="tab-content">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>CTS Date of Notarization (mm/dd/yyyy)</label>
+                <input type="text" id="f-date-notarization" class="form-control" placeholder="mm/dd/yyyy">
+              </div>
+              <div class="form-group">
+                <label>Notary of CTS Details (Col L)</label>
+                <input type="text" id="f-notary-cts" class="form-control" placeholder="Doc __, Page __, Book __, Series of ____">
+              </div>
+              <div class="form-group">
+                <label>Attorney-in-Fact (if applicable)</label>
+                <input type="text" id="f-aif" class="form-control" placeholder="Leave empty if none">
+              </div>
+              <div class="form-group">
+                <label>Co Attorney-in-Fact</label>
+                <input type="text" id="f-co-aif" class="form-control" placeholder="Leave empty if none">
+              </div>
+              <div class="form-group">
+                <label>AIF Relationship</label>
+                <input type="text" id="f-aif-rel" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <!-- Generation & Action Bar -->
+          <div class="actions-panel" style="border-top: 1px solid var(--glass-border);">
+            <div class="stage-switch">
+              <label style="font-size: 12px; color: var(--text-muted); font-weight: 600;">STAGE:</label>
+              <select id="stage-selector" onchange="refreshFormsList()">
+                <option value="PRE-APPROVAL" selected>PRE-APPROVAL</option>
+                <option value="POST-APPROVAL">POST-APPROVAL</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn btn-secondary" onclick="previewForm(0)">
+                <i class="fi fi-rs-eye" aria-hidden="true"></i> Preview First Form
+              </button>
+              <button class="btn btn-primary" id="make-btn" onclick="makeForms()">
+                <i class="fi fi-rs-document" aria-hidden="true"></i> Save & Make Forms
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Made files -->
+        <div id="results-panel" class="glass-panel preview-panel" style="display: none;">
+          <div class="preview-header">
+            <div>
+              <h3 style="font-size: 15px; font-weight: 700;">Forms Made</h3>
+              <p id="results-folder" style="font-size: 11px; color: var(--text-muted); word-break: break-all;"></p>
+            </div>
+            <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 11px;" onclick="openResultsFolder()">
+              <i class="fi fi-rs-folder" aria-hidden="true"></i> Open Folder
+            </button>
+          </div>
+          <div class="forms-grid" id="results-container"></div>
+        </div>
+
+        <!-- Forms & PDF Preview -->
+        <div class="glass-panel preview-panel">
+          <div class="preview-header">
+            <div>
+              <h3 style="font-size: 15px; font-weight: 700;">Forms for This Stage</h3>
+              <p id="forms-note" style="font-size: 11px; color: var(--text-muted);">Click Preview to see a form exactly as it will print.</p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 11px;" onclick="prevPdfPage()">◀ Prev</button>
+              <span id="page-num-indicator" style="font-size: 12px; align-self: center; font-weight: 600;">No preview</span>
+              <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 11px;" onclick="nextPdfPage()">Next ▶</button>
+            </div>
+          </div>
+
+          <div class="forms-grid" id="forms-grid-container"></div>
+
+          <div class="preview-canvas-container">
+            <canvas id="pdf-canvas"></canvas>
+            <p id="preview-placeholder" style="color: var(--text-muted); font-size: 13px;">The preview appears here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- First-run Setup (cannot be closed until finished) -->
+  <div class="modal-backdrop" id="setup-modal">
+    <div class="glass-panel modal-box modal-wide setup-box">
+      <div class="setup-head">
+        <img src="logo.png" alt="SwiftDocs Services &amp; Trade OPC" class="setup-logo">
+        <div>
+          <h3>Welcome! Let's set up Pag-IBIG Forms</h3>
+          <p>Choose where this computer gets the buyer list and where it saves forms. You can change these later in Settings.</p>
+        </div>
+      </div>
+
+      <div class="settings-scroll">
+        <div class="setup-step">
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <p class="step-title">Buyer list (BookData.xlsx)</p>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="excel-mode" value="existing" checked onchange="updateSetupMode()"> Use an existing BookData.xlsx <span>(e.g. the shared OneDrive copy)</span></label>
+              <label class="choice"><input type="radio" name="excel-mode" value="new" onchange="updateSetupMode()"> Create a new, empty BookData.xlsx</label>
+            </div>
+            <div id="setup-existing" class="input-row">
+              <input type="text" id="setup-excel" class="form-control" placeholder="Choose BookData.xlsx…">
+              <button class="btn btn-secondary" onclick="browseInto('setup-excel', 'excel')">Browse…</button>
+            </div>
+            <div id="setup-new" class="input-row" style="display: none;">
+              <input type="text" id="setup-excel-folder" class="form-control" placeholder="Folder for the new BookData.xlsx">
+              <button class="btn btn-secondary" onclick="browseInto('setup-excel-folder', 'folder')">Browse…</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-step">
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <p class="step-title">Official Pag-IBIG blank forms folder</p>
+            <p class="step-hint">Put the official blank PDFs here (e.g. HLF161_CTSFinancingAffordableHousingProgram_V06.pdf). Forms without one are made as DRAFT layouts.</p>
+            <div class="input-row">
+              <input type="text" id="setup-forms" class="form-control">
+              <button class="btn btn-secondary" onclick="browseInto('setup-forms', 'folder')">Browse…</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-step">
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <p class="step-title">Save filled forms in</p>
+            <p class="step-hint">Each buyer gets a folder here, e.g. "JUAN DELA CRUZ - Pre-approval".</p>
+            <div class="input-row">
+              <input type="text" id="setup-save" class="form-control">
+              <button class="btn btn-secondary" onclick="browseInto('setup-save', 'folder')">Browse…</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-step">
+          <span class="step-num">4</span>
+          <div class="step-body">
+            <p class="step-title">Developer & project <span class="optional">(check these)</span></p>
+            <div class="form-grid">
+              <div class="form-group"><label>Developer Name</label><input type="text" id="setup-dev-name" class="form-control"></div>
+              <div class="form-group"><label>Developer Representative</label><input type="text" id="setup-dev-rep" class="form-control"></div>
+              <div class="form-group"><label>Project Address</label><input type="text" id="setup-proj-addr" class="form-control"></div>
+              <div class="form-group"><label>BVS Municipality</label><input type="text" id="setup-bvs-mun" class="form-control"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-step">
+          <span class="step-num">5</span>
+          <div class="step-body">
+            <p class="step-title">Anthropic API key for HLA scanning <span class="optional">(optional, can be added later)</span></p>
+            <input type="password" id="setup-api-key" class="form-control" placeholder="sk-ant-…">
+          </div>
+        </div>
+      </div>
+
+      <div id="setup-problems" class="setup-problems" style="display: none;"></div>
+      <div style="display: flex; justify-content: flex-end; margin-top: 16px;">
+        <button class="btn btn-primary" id="setup-finish-btn" onclick="finishSetup()">
+          <i class="fi fi-rs-check" aria-hidden="true"></i> Finish Setup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div class="modal-backdrop" id="settings-modal">
+    <div class="glass-panel modal-box modal-wide">
+      <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 16px;">Settings</h3>
+      <div class="settings-scroll">
+        <p class="settings-section">Files</p>
+        <div class="form-group">
+          <label>BookData.xlsx</label>
+          <div class="input-row"><input type="text" id="s-excel" class="form-control"><button class="btn btn-secondary" onclick="browseInto('s-excel', 'excel')">Browse…</button></div>
+        </div>
+        <div class="form-group">
+          <label>Official blank forms folder</label>
+          <div class="input-row"><input type="text" id="s-forms" class="form-control"><button class="btn btn-secondary" onclick="browseInto('s-forms', 'folder')">Browse…</button></div>
+        </div>
+        <div class="form-group">
+          <label>Save filled forms in</label>
+          <div class="input-row"><input type="text" id="s-save" class="form-control"><button class="btn btn-secondary" onclick="browseInto('s-save', 'folder')">Browse…</button></div>
+        </div>
+
+        <p class="settings-section">Developer & Project</p>
+        <div class="form-grid">
+          <div class="form-group"><label>Developer Name</label><input type="text" id="s-dev-name" class="form-control"></div>
+          <div class="form-group"><label>Developer Representative</label><input type="text" id="s-dev-rep" class="form-control"></div>
+          <div class="form-group"><label>Project Address</label><input type="text" id="s-proj-addr" class="form-control"></div>
+          <div class="form-group"><label>BVS Municipality</label><input type="text" id="s-bvs-mun" class="form-control"></div>
+          <div class="form-group full-width"><label>Witnesses (Affordable) - two names, comma separated</label><input type="text" id="s-w-aff" class="form-control"></div>
+          <div class="form-group full-width"><label>Witnesses (End-User LMA/PN) - two names, comma separated</label><input type="text" id="s-w-eu" class="form-control"></div>
+        </div>
+
+        <p class="settings-section">HLA Scanning (Anthropic)</p>
+        <div class="form-group">
+          <label>Anthropic API Key (stored encrypted on this computer)</label>
+          <input type="password" id="s-api-key" class="form-control" placeholder="sk-ant-…">
+        </div>
+        <div class="form-group">
+          <label>Anthropic Model</label>
+          <input type="text" id="s-model" class="form-control">
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-secondary" onclick="clearApiKey()">Remove Saved API Key</button>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-secondary" onclick="closeModal('settings-modal')">Cancel</button>
+          <button class="btn btn-primary" onclick="saveSettings()">Save Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HLA Scan Upload Modal -->
+  <div class="modal-backdrop" id="hla-modal">
+    <div class="glass-panel modal-box">
+      <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 14px;">Upload HLA Application Scan</h3>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+        Claude reads the entries and fills a new buyer for you to check. The files are sent only to Anthropic (api.anthropic.com).
+      </p>
+      <div class="form-group" style="margin-bottom: 14px;">
+        <label>Select HLA Photo(s) or PDF</label>
+        <input type="file" id="hla-file-input" class="form-control" accept="image/jpeg,image/png,application/pdf" multiple>
+      </div>
+      <div id="hla-status" style="font-size: 12px; margin-bottom: 12px; display: none;"></div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn btn-secondary" onclick="closeModal('hla-modal')">Cancel</button>
+        <button class="btn btn-primary" id="hla-scan-btn" onclick="processHlaScan()">Scan & Fill</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message / Confirm Modal -->
+  <div class="modal-backdrop" id="message-modal">
+    <div class="glass-panel modal-box">
+      <h3 id="message-title" style="font-size: 16px; font-weight: 700; margin-bottom: 10px;"></h3>
+      <div id="message-body" class="message-body"></div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px;">
+        <button class="btn btn-secondary" id="message-cancel">Cancel</button>
+        <button class="btn btn-primary" id="message-ok">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="vendor/pdf.min.js"></script>
+  <script>
+    // All real work happens in the app's Python engine; this page only shows it.
+    const APP_TOKEN = document.querySelector('meta[name="app-token"]').content;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdf.worker.min.js";
+
+    // [input id, buyer field]
+    const FIELDS = [
+      ["f-principal", "principal_borrower"], ["f-status", "status"],
+      ["f-co-borrower", "co_borrower"], ["f-co-status", "co_borrower_status"],
+      ["f-address", "address"], ["f-co-address", "co_borrower_address"],
+      ["f-block-lot", "block_lot"], ["f-title-no", "title_no"],
+      ["f-tin-principal", "tin_principal"], ["f-tin-co", "tin_co_borrower"], ["f-tin-spouse", "tin_spouse"],
+      ["f-email", "email"], ["f-house-type", "house_type"], ["f-lot-area", "lot_area"],
+      ["f-consideration", "consideration"], ["f-loanable", "loanable_amount"],
+      ["f-interest-rate", "interest_rate"], ["f-loan-term", "loan_term_years"], ["f-repricing", "repricing_years"],
+      ["f-mri", "mri_sri"], ["f-nonlife", "non_life"], ["f-pi", "principal_interest"],
+      ["f-techdesc", "tech_desc"], ["f-techdesc-cont", "tech_desc_cont"],
+      ["f-date-notarization", "date_notarization"], ["f-notary-cts", "notary_cts"],
+      ["f-aif", "attorney_in_fact"], ["f-co-aif", "co_attorney_in_fact"], ["f-aif-rel", "attorney_in_fact_rel"],
+    ];
+    const MONEY_FIELDS = ["consideration", "loanable_amount", "mri_sri", "non_life", "principal_interest"];
+
+    let buyers = [];
+    let current = null;        // the buyer being edited (plain object as sent by Python)
+    let currentRow = null;     // its Excel row, or null for a buyer not saved yet
+    let dirty = false;
+    let excelMtime = 0;
+    let projectAddress = "";
+    let lastResults = null;
+    let pdfDoc = null, pdfPage = 1;
+
+    // ---------- Talking to Python ----------
+    async function api(path, body, { raw = false } = {}) {
+      const res = await fetch(path, {
+        method: body === undefined ? "GET" : "POST",
+        headers: { "X-App-Token": APP_TOKEN, "Content-Type": "application/json" },
+        body: body === undefined ? undefined : JSON.stringify(body),
+      });
+      if (raw && res.ok) return await res.arrayBuffer();
+      let data;
+      try { data = await res.json(); } catch (e) { data = { error: "Unexpected reply from the app." }; }
+      if (!res.ok) {
+        const err = new Error(data.error || "Something went wrong.");
+        err.details = data.details || [];
+        throw err;
+      }
+      return data;
+    }
+
+    function showError(title, err) {
+      const details = (err && err.details && err.details.length) ? err.details : [];
+      return showMessage(title, (err && err.message) || String(err), details);
+    }
+
+    // ---------- Message / confirm dialog ----------
+    function showMessage(title, text, items = [], { confirm = false, okText = "OK" } = {}) {
+      return new Promise(resolve => {
+        document.getElementById("message-title").textContent = title;
+        const body = document.getElementById("message-body");
+        body.innerHTML = "";
+        const p = document.createElement("p");
+        p.textContent = text;
+        body.appendChild(p);
+        if (items.length) {
+          const ul = document.createElement("ul");
+          items.forEach(t => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+          body.appendChild(ul);
+        }
+        const ok = document.getElementById("message-ok");
+        const cancel = document.getElementById("message-cancel");
+        ok.textContent = okText;
+        cancel.style.display = confirm ? "" : "none";
+        const done = (answer) => { closeModal("message-modal"); ok.onclick = cancel.onclick = null; resolve(answer); };
+        ok.onclick = () => done(true);
+        cancel.onclick = () => done(false);
+        openModal("message-modal");
+      });
+    }
+    const askYesNo = (title, text, items, okText = "Continue") => showMessage(title, text, items, { confirm: true, okText });
+
+    let toastTimer = null;
+    function toast(text) {
+      const t = document.getElementById("toast");
+      t.textContent = text;
+      t.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+    }
+
+    function openModal(id) { document.getElementById(id).classList.add("show"); }
+    function closeModal(id) { document.getElementById(id).classList.remove("show"); }
+
+    function setBusy(buttonId, busy, busyText) {
+      const b = document.getElementById(buttonId);
+      if (!b) return;
+      if (busy) { b.dataset.label = b.innerHTML; b.disabled = true; if (busyText) b.textContent = busyText; }
+      else { b.disabled = false; if (b.dataset.label) b.innerHTML = b.dataset.label; }
+    }
+
+    // ---------- Formatting ----------
+    const peso = n => "₱ " + Number(n || 0).toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    function fieldText(key, value) {
+      if (value === null || value === undefined) return "";
+      if (MONEY_FIELDS.includes(key)) return value ? Number(value).toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "";
+      if (key === "interest_rate") return value ? `${+(value * 100).toFixed(4)}%` : "";
+      if (key === "lot_area") return value ? String(+value) : "";
+      if (key === "loan_term_years" || key === "repricing_years") return value ? String(value) : "";
+      return String(value);
+    }
+
+    // ---------- Buyers list ----------
+    async function reloadBuyers(announce = false) {
+      try {
+        const data = await api("/api/buyers");
+        buyers = data.buyers;
+        excelMtime = data.mtime;
+        setNotice(data.notice);
+        renderBuyerList();
+        if (current && !dirty && currentRow) {
+          const fresh = buyers.find(b => b.row_idx === currentRow);
+          if (fresh) loadIntoForm(fresh);
+        }
+        if (announce) toast(`Loaded ${buyers.length} buyers`);
+      } catch (e) {
+        setNotice(e.message);
+      }
+    }
+
+    function setNotice(text) {
+      const bar = document.getElementById("notice-bar");
+      bar.textContent = text || "";
+      bar.style.display = text ? "block" : "none";
+    }
+
+    function renderBuyerList() {
+      const q = (document.getElementById("search-input").value || "").toLowerCase().trim();
+      const list = q ? buyers.filter(b =>
+        (b.principal_borrower || "").toLowerCase().includes(q) ||
+        (b.co_borrower || "").toLowerCase().includes(q) ||
+        (b.block_lot || "").toLowerCase().includes(q) ||
+        (b.title_no || "").toLowerCase().includes(q)) : buyers;
+      const container = document.getElementById("buyer-list-container");
+      container.innerHTML = "";
+      document.getElementById("buyer-count").textContent = `${buyers.length} Buyer${buyers.length === 1 ? "" : "s"}`;
+      if (!list.length) {
+        const p = document.createElement("p");
+        p.className = "list-empty";
+        p.textContent = q ? "No buyer matches your search." : "No buyers yet.";
+        container.appendChild(p);
+      }
+      list.forEach(b => {
+        const card = document.createElement("div");
+        card.className = `glass-card buyer-item ${currentRow && b.row_idx === currentRow ? "active" : ""}`;
+        card.onclick = () => selectBuyer(b);
+        const name = document.createElement("div");
+        name.className = "buyer-item-name";
+        name.textContent = b.principal_borrower || "Untitled Buyer";
+        const sub = document.createElement("div");
+        sub.className = "buyer-item-sub";
+        const lot = document.createElement("span");
+        lot.textContent = b.block_lot || "No Block/Lot";
+        const badge = document.createElement("span");
+        if (b.loanable_amount > 0) {
+          badge.className = `badge ${b.is_affordable ? "badge-affordable" : "badge-enduser"}`;
+          badge.textContent = "₱" + Number(b.loanable_amount).toLocaleString("en-PH");
+        } else {
+          badge.className = "badge badge-pending";
+          badge.textContent = "No loan amount";
+        }
+        sub.append(lot, badge);
+        card.append(name, sub);
+        container.appendChild(card);
+      });
+    }
+
+    async function confirmDiscard() {
+      if (!dirty) return true;
+      return await askYesNo("Unsaved changes", "This buyer has changes that are not saved to Excel yet. Discard them?", [], "Discard");
+    }
+
+    async function selectBuyer(b) {
+      if (current && currentRow === b.row_idx) return;
+      if (!(await confirmDiscard())) return;
+      currentRow = b.row_idx;
+      loadIntoForm(b);
+      lastResults = null;
+      document.getElementById("results-panel").style.display = "none";
+      renderBuyerList();
+    }
+
+    async function addNewBuyer() {
+      if (!(await confirmDiscard())) return;
+      currentRow = null;
+      loadIntoForm({ status: "Single", co_borrower: "N/A", row_idx: 0, extra_fields: {} });
+      document.getElementById("results-panel").style.display = "none";
+      renderBuyerList();
+      document.getElementById("f-principal").focus();
+    }
+
+    // ---------- Editor ----------
+    function loadIntoForm(b) {
+      current = JSON.parse(JSON.stringify(b));
+      for (const [id, key] of FIELDS) {
+        document.getElementById(id).value = fieldText(key, current[key]);
+      }
+      setDirty(false);
+      document.getElementById("empty-state").style.display = "none";
+      document.getElementById("editor").style.display = "flex";
+      updateHeader();
+      clearPreview();
+      scheduleRefresh(0);
+    }
+
+    function readForm() {
+      const b = Object.assign({}, current);
+      for (const [id, key] of FIELDS) b[key] = document.getElementById(id).value;
+      b.row_idx = currentRow || 0;
+      return b;
+    }
+
+    function setDirty(d) {
+      dirty = d;
+      document.getElementById("dirty-badge").style.display = d ? "" : "none";
+    }
+
+    function updateHeader(info) {
+      const name = document.getElementById("f-principal").value.trim();
+      document.getElementById("view-principal-name").textContent = name || "NEW BUYER";
+      const lot = info ? info.lot_label : (current && current.lot_label) || document.getElementById("f-block-lot").value;
+      document.getElementById("view-property-line").textContent = [lot, projectAddress.toUpperCase()].filter(Boolean).join(" · ");
+    }
+
+    let refreshTimer = null;
+    function scheduleRefresh(delay = 350) {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(refreshDerived, delay);
+    }
+
+    // Equity, amount in words, short technical description and program: worked out by Python,
+    // so the screen shows exactly what the forms will print.
+    async function refreshDerived() {
+      if (!current) return;
+      const buyer = readForm();
+      try {
+        const info = await api("/api/buyers/preview-text", { buyer });
+        const loan = info.loan_words;
+        document.getElementById("f-equity").value = buyer.consideration ? peso(info.equity) : "";
+        document.getElementById("amount-words-preview").textContent = loan || "-";
+        document.getElementById("f-techdesc-short").value = info.short_tech_desc;
+        const badge = document.getElementById("program-badge");
+        if (!loan) {
+          badge.className = "badge badge-pending";
+          badge.textContent = "Enter approved loanable amount";
+        } else if (info.is_affordable) {
+          badge.className = "badge badge-affordable";
+          badge.textContent = "Affordable Housing Program (< ₱950,000)";
+        } else {
+          badge.className = "badge badge-enduser";
+          badge.textContent = "End-User Home Financing Program (≥ ₱950,000)";
+        }
+        updateHeader(info);
+      } catch (e) { /* shown again on save */ }
+      refreshFormsList();
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.toggle("active", btn.dataset.tab === tabId));
+      document.querySelectorAll(".tab-content").forEach(c => c.classList.toggle("active", c.id === `tab-${tabId}`));
+    }
+
+    async function saveBuyer() {
+      if (!current) return;
+      setBusy("save-btn", true, "Saving…");
+      try {
+        const data = await api("/api/buyers/save", { buyer: readForm() });
+        afterSaved(data.buyer, data.mtime);
+        toast(`Saved to Excel (row ${data.row})`);
+      } catch (e) {
+        await showError("Could not save", e);
+      } finally {
+        setBusy("save-btn", false);
+      }
+    }
+
+    function afterSaved(saved, mtime) {
+      currentRow = saved.row_idx;
+      const i = buyers.findIndex(b => b.row_idx === saved.row_idx);
+      if (i >= 0) buyers[i] = saved; else buyers.push(saved);
+      excelMtime = mtime || excelMtime;
+      current = JSON.parse(JSON.stringify(saved));
+      setDirty(false);
+      renderBuyerList();
+      updateHeader();
+    }
+
+    // ---------- Forms ----------
+    let formsTimer = null;
+    function refreshFormsList() {
+      clearTimeout(formsTimer);
+      formsTimer = setTimeout(async () => {
+        if (!current) return;
+        try {
+          const data = await api("/api/forms/list", { buyer: readForm(), stage: stage() });
+          renderFormsList(data.forms, data.forms_dir);
+        } catch (e) { /* keep the old list */ }
+      }, 150);
+    }
+
+    const stage = () => document.getElementById("stage-selector").value;
+
+    function renderFormsList(forms, formsDir) {
+      const container = document.getElementById("forms-grid-container");
+      container.innerHTML = "";
+      const drafts = forms.filter(f => !f.official).length;
+      document.getElementById("forms-note").textContent = drafts
+        ? `${drafts} of ${forms.length} official blank PDFs are missing from ${formsDir}, so those forms are made as DRAFT layouts.`
+        : "Click Preview to see a form exactly as it will print.";
+      forms.forEach(f => {
+        const card = document.createElement("div");
+        card.className = "form-item-card";
+        const info = document.createElement("div");
+        const title = document.createElement("div");
+        title.className = "form-item-title";
+        title.textContent = f.name;
+        title.title = f.name;
+        const code = document.createElement("span");
+        code.className = "form-code";
+        code.textContent = f.official ? f.code : `${f.code} · DRAFT`;
+        if (!f.official) code.classList.add("draft");
+        info.append(title, code);
+        const btn = document.createElement("button");
+        btn.className = "btn btn-secondary btn-small";
+        btn.innerHTML = '<i class="fi fi-rs-eye" aria-hidden="true"></i> Preview';
+        btn.onclick = () => previewForm(f.index);
+        card.append(info, btn);
+        container.appendChild(card);
+      });
+    }
+
+    async function previewForm(index) {
+      if (!current) return;
+      try {
+        const bytes = await api("/api/forms/preview", { buyer: readForm(), stage: stage(), index }, { raw: true });
+        pdfDoc = await pdfjsLib.getDocument({ data: new Uint8Array(bytes) }).promise;
+        pdfPage = 1;
+        document.getElementById("preview-placeholder").style.display = "none";
+        await renderPdfPage();
+        document.getElementById("pdf-canvas").scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (e) {
+        await showError("Could not preview the form", e);
+      }
+    }
+
+    function clearPreview() {
+      pdfDoc = null;
+      const canvas = document.getElementById("pdf-canvas");
+      canvas.width = 0; canvas.height = 0;
+      document.getElementById("page-num-indicator").textContent = "No preview";
+      document.getElementById("preview-placeholder").style.display = "";
+    }
+
+    async function renderPdfPage() {
+      if (!pdfDoc) return;
+      const page = await pdfDoc.getPage(pdfPage);
+      const canvas = document.getElementById("pdf-canvas");
+      const viewport = page.getViewport({ scale: 1.35 });
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      document.getElementById("page-num-indicator").textContent = `Page ${pdfPage} of ${pdfDoc.numPages}`;
+      await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+    }
+    function prevPdfPage() { if (pdfDoc && pdfPage > 1) { pdfPage--; renderPdfPage(); } }
+    function nextPdfPage() { if (pdfDoc && pdfPage < pdfDoc.numPages) { pdfPage++; renderPdfPage(); } }
+
+    async function makeForms() {
+      if (!current) return;
+      const buyer = readForm();
+      try {
+        const check = await api("/api/forms/check", { buyer, stage: stage() });
+        if (check.missing.length && !(await askYesNo("Some details are blank",
+            "These will be left blank on the forms. Make the forms anyway?", check.missing, "Make Forms"))) return;
+        if (check.drafts.length && !(await askYesNo("Official blank forms missing",
+            `No official Pag-IBIG PDF was found in ${check.forms_dir} for the forms below. They will be made as DRAFT layouts marked "DO NOT SUBMIT".`,
+            check.drafts, "Continue"))) return;
+      } catch (e) {
+        return showError("Please check these details", e);
+      }
+      setBusy("make-btn", true, "Making forms…");
+      try {
+        const res = await api("/api/forms/make", { buyer, stage: stage() });
+        afterSaved(res.buyer, res.mtime);
+        showResults(res);
+        if (res.errors.length) await showMessage("Some forms were not made", "", res.errors);
+        else toast(`Saved to Excel and made ${res.files.length} files`);
+      } catch (e) {
+        await showError("The forms were not made", e);
+      } finally {
+        setBusy("make-btn", false);
+      }
+    }
+
+    function showResults(res) {
+      lastResults = res;
+      document.getElementById("results-panel").style.display = "";
+      document.getElementById("results-folder").textContent = res.folder;
+      const container = document.getElementById("results-container");
+      container.innerHTML = "";
+      res.files.forEach(f => {
+        const card = document.createElement("div");
+        card.className = "form-item-card";
+        const title = document.createElement("div");
+        title.className = "form-item-title";
+        title.textContent = f.name;
+        title.title = f.name;
+        const btn = document.createElement("button");
+        btn.className = "btn btn-secondary btn-small";
+        btn.innerHTML = '<i class="fi fi-rs-file-pdf" aria-hidden="true"></i> Open';
+        btn.onclick = () => openPath(f.path);
+        card.append(title, btn);
+        container.appendChild(card);
+      });
+      document.getElementById("results-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    async function openPath(path) {
+      try { await api("/api/open", { path }); } catch (e) { await showError("Could not open", e); }
+    }
+    function openResultsFolder() { if (lastResults) openPath(lastResults.folder); }
+
+    // ---------- Excel file ----------
+    async function chooseExcel() {
+      if (!(await confirmDiscard())) return;
+      try {
+        const data = await api("/api/excel/choose", {});
+        if (!data.picked) return;
+        buyers = data.buyers; excelMtime = data.mtime; setNotice(data.notice);
+        current = null; currentRow = null; setDirty(false);
+        document.getElementById("editor").style.display = "none";
+        document.getElementById("empty-state").style.display = "";
+        renderBuyerList();
+        toast(`Using ${data.excel_path}`);
+      } catch (e) { await showError("Could not load that Excel file", e); }
+    }
+
+    // Picks up saves made by other staff (checked every 20 seconds)
+    setInterval(async () => {
+      try {
+        const { mtime } = await api("/api/poll");
+        const settingUp = document.getElementById("setup-modal").classList.contains("show");
+        if (!settingUp && mtime > excelMtime) await reloadBuyers();
+      } catch (e) { /* try again next time */ }
+    }, 20000);
+
+    // ---------- HLA scan ----------
+    function openHlaModal() {
+      document.getElementById("hla-status").style.display = "none";
+      openModal("hla-modal");
+    }
+
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",")[1]);
+        reader.onerror = () => reject(new Error(`Could not read ${file.name}`));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function setHlaStatus(text, color) {
+      const s = document.getElementById("hla-status");
+      s.style.display = "block"; s.style.color = color; s.textContent = text;
+    }
+
+    async function processHlaScan() {
+      const files = Array.from(document.getElementById("hla-file-input").files || []);
+      if (!files.length) return setHlaStatus("Choose at least one photo or PDF.", "#B91C1C");
+      if (!(await confirmDiscard())) return;
+      setBusy("hla-scan-btn", true, "Reading…");
+      setHlaStatus("Reading the HLA… this can take up to a minute.", "var(--accent-amber)");
+      try {
+        const payload = [];
+        for (const f of files) payload.push({ name: f.name, data: await readFileAsBase64(f) });
+        const res = await api("/api/hla/scan", { files: payload });
+        document.getElementById("hla-file-input").value = "";
+        closeModal("hla-modal");
+        currentRow = null;
+        loadIntoForm(res.buyer);
+        setDirty(true);
+        renderBuyerList();
+        await showMessage(`HLA read: ${res.buyer.principal_borrower || "(name unreadable)"}`,
+          res.flags.length ? "Please check these before saving:" : "Please check the details, then Save to Excel.", res.flags);
+      } catch (e) {
+        setHlaStatus(e.message, "#B91C1C");
+      } finally {
+        setBusy("hla-scan-btn", false);
+      }
+    }
+
+    // ---------- Settings ----------
+    const SETTINGS_INPUTS = [["s-excel", "excel_path"], ["s-forms", "forms_folder"], ["s-save", "save_folder"],
+      ["s-dev-name", "developer_name"], ["s-dev-rep", "developer_rep"], ["s-proj-addr", "project_address"],
+      ["s-bvs-mun", "bvs_municipality"], ["s-w-aff", "witnesses_affordable"], ["s-w-eu", "witnesses_end_user"],
+      ["s-model", "anthropic_model"]];
+
+    function fillSettings(s) {
+      for (const [id, key] of SETTINGS_INPUTS) document.getElementById(id).value = s[key] || "";
+      const key = document.getElementById("s-api-key");
+      key.value = "";
+      key.placeholder = s.has_api_key ? "Saved (encrypted). Type a new key to replace it." : "sk-ant-…";
+      projectAddress = s.project_address || "";
+    }
+
+    async function openSettingsModal() {
+      try { fillSettings(await api("/api/settings")); openModal("settings-modal"); }
+      catch (e) { await showError("Could not open Settings", e); }
+    }
+
+    async function browseInto(inputId, kind) {
+      try {
+        const { path } = await api("/api/browse", { kind });
+        if (path) document.getElementById(inputId).value = path;
+      } catch (e) { await showError("Could not open the file picker", e); }
+    }
+
+    async function saveSettings() {
+      const body = {};
+      for (const [id, key] of SETTINGS_INPUTS) body[key] = document.getElementById(id).value;
+      body.anthropic_api_key = document.getElementById("s-api-key").value;
+      try {
+        fillSettings(await api("/api/settings/save", body));
+        closeModal("settings-modal");
+        toast("Settings saved");
+        await reloadBuyers();
+        updateHeader();
+        refreshFormsList();
+      } catch (e) { await showError("Could not save Settings", e); }
+    }
+
+    async function clearApiKey() {
+      if (!(await askYesNo("Remove API key", "Delete the saved Anthropic API key from this computer?", [], "Remove"))) return;
+      try { fillSettings(await api("/api/settings/clear-key", {})); toast("API key removed"); }
+      catch (e) { await showError("Could not remove the key", e); }
+    }
+
+    // ---------- Start ----------
+    document.addEventListener("input", e => {
+      if (current && FIELDS.some(([id]) => id === e.target.id)) {
+        setDirty(true);
+        if (e.target.id === "f-principal") updateHeader();
+        scheduleRefresh();
+      }
+    });
+    document.addEventListener("keydown", e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") { e.preventDefault(); saveBuyer(); }
+      if (e.key === "Escape") document.querySelectorAll(".modal-backdrop.show").forEach(m => {
+        if (m.id !== "message-modal" && m.id !== "setup-modal") m.classList.remove("show");
+      });
+    });
+
+    (async () => {
+      let s = null;
+      try { s = await api("/api/settings"); projectAddress = s.project_address || ""; } catch (e) { }
+      if (s && !s.setup_complete) {
+        openSetup(s);  // first launch on this computer: choose locations before anything else
+        return;
+      }
+      await reloadBuyers();
+    })();
+
+    // ---------- First-run setup ----------
+    function openSetup(s) {
+      document.getElementById("setup-excel").value = "";
+      document.getElementById("setup-excel-folder").value = s.excel_path ? s.excel_path.replace(/[\\/][^\\/]*$/, "") : "";
+      document.getElementById("setup-forms").value = s.forms_folder || "";
+      document.getElementById("setup-save").value = s.save_folder || "";
+      document.getElementById("setup-dev-name").value = s.developer_name || "";
+      document.getElementById("setup-dev-rep").value = s.developer_rep || "";
+      document.getElementById("setup-proj-addr").value = s.project_address || "";
+      document.getElementById("setup-bvs-mun").value = s.bvs_municipality || "";
+      updateSetupMode();
+      openModal("setup-modal");
+    }
+
+    function updateSetupMode() {
+      const mode = document.querySelector('input[name="excel-mode"]:checked').value;
+      document.getElementById("setup-existing").style.display = mode === "existing" ? "" : "none";
+      document.getElementById("setup-new").style.display = mode === "new" ? "" : "none";
+    }
+
+    async function finishSetup() {
+      const box = document.getElementById("setup-problems");
+      box.style.display = "none";
+      const body = {
+        excel_mode: document.querySelector('input[name="excel-mode"]:checked').value,
+        excel_path: document.getElementById("setup-excel").value.trim(),
+        excel_folder: document.getElementById("setup-excel-folder").value.trim(),
+        forms_folder: document.getElementById("setup-forms").value.trim(),
+        save_folder: document.getElementById("setup-save").value.trim(),
+        developer_name: document.getElementById("setup-dev-name").value,
+        developer_rep: document.getElementById("setup-dev-rep").value,
+        project_address: document.getElementById("setup-proj-addr").value,
+        bvs_municipality: document.getElementById("setup-bvs-mun").value,
+        anthropic_api_key: document.getElementById("setup-api-key").value,
+      };
+      setBusy("setup-finish-btn", true, "Setting up…");
+      try {
+        const s = await api("/api/setup/finish", body);
+        document.getElementById("setup-api-key").value = "";
+        projectAddress = s.project_address || "";
+        closeModal("setup-modal");
+        await reloadBuyers();
+        toast("All set! You can change these anytime in Settings.");
+      } catch (e) {
+        box.innerHTML = "";
+        const p = document.createElement("p");
+        p.textContent = e.message;
+        box.appendChild(p);
+        if (e.details && e.details.length) {
+          const ul = document.createElement("ul");
+          e.details.forEach(t => { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+          box.appendChild(ul);
+        }
+        box.style.display = "block";
+      } finally {
+        setBusy("setup-finish-btn", false);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["briefcase"]
+
+[project]
+name = "pagibig-forms"
+version = "1.0.0"
+description = "Pag-IBIG Housing Loan Forms Auto-Fill System"
+license = "LicenseRef-Proprietary"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Jennifer B. Peduca", email = "jpeduca@summerfield.ph" }
+]
+dependencies = [
+    "toga-core>=0.5.7,<0.6",
+    "pypdf>=5.0.0",
+    "openpyxl>=3.1.0",
+    "anthropic>=1.15.0,<2",
+]
+
+[tool.briefcase]
+project_name = "Pag-IBIG Forms"
+bundle = "ph.com.summerfield"
+version = "1.0.0"
+url = "https://summerfield.ph"
+author = "Jennifer B. Peduca"
+author_email = "jpeduca@summerfield.ph"
+
+[tool.briefcase.app.pagibig_forms]
+formal_name = "Pag-IBIG Forms"
+description = "Pag-IBIG Fund Housing Loan Forms for Bloomfield Terraces"
+icon = "src/pagibig_forms/resources/pagibig_forms"
+sources = ["src/pagibig_forms"]
+test_sources = ["tests"]
+
+[tool.briefcase.app.pagibig_forms.windows]
+requires = [
+    "toga-winforms>=0.5.7,<0.6",
+    "Pillow>=10.0.0"
+]
+
+[tool.briefcase.app.pagibig_forms.android]
+requires = [
+    "toga-android>=0.5.7,<0.6"
+]
+base_theme = "Theme.MaterialComponents.Light"
+permissions = [
+    "android.permission.INTERNET"
+]

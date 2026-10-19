@@ -1,0 +1,31 @@
+/* Uicons regular-straight (Flaticon), bundled for offline use: only the icons this app uses */
+@font-face {
+  font-family: "uicons-regular-straight";
+  src: url("fonts/uicons-regular-straight.woff2") format("woff2");
+  font-display: block;
+}
+i[class^="fi-rs-"]:before, i[class*=" fi-rs-"]:before {
+  font-family: uicons-regular-straight !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.fi-rs-folder-open:before { content: "\e728"; }
+.fi-rs-disk:before { content: "\e56a"; }
+.fi-rs-settings:before { content: "\eda3"; }
+.fi-rs-search:before { content: "\ed83"; }
+.fi-rs-user-add:before { content: "\f0a8"; }
+.fi-rs-cloud-upload:before { content: "\e42b"; }
+.fi-rs-check:before { content: "\e35f"; }
+.fi-rs-eye:before { content: "\e62c"; }
+.fi-rs-download:before { content: "\e5a3"; }
+.fi-rs-refresh:before { content: "\ece4"; }
+.fi-rs-document:before { content: "\e57f"; }
+.fi-rs-folder:before { content: "\e717"; }
+.fi-rs-file-pdf:before { content: "\e6b5"; }
+.fi-rs-cross:before { content: "\e4cd"; }
+.fi-rs-info:before { content: "\e8ce"; }
+.fi-rs-exclamation:before { content: "\e61e"; }

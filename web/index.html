@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pag-IBIG Forms Automation · Bloomfield Terraces</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAZ0ElEQVR42u17d5RcxZnvr6pu39u3u2+nmenJiqOAEpJQAAmBiJIIz4sMj4wxJtp78O4+23hJx88+b1nM2rveZdfI4IAAYxsDBoRYQIAiSEiyNBJKozR5NNPd07n79g1V74++PZoRo0jwO2/3nlOn7+2urlv11ff9vljAf1//tS/yOY1BPqexTucSg9pfhAAEADum4UsgRHnB9jFNfJkEIAAkAIrP51P9fpfbsrhLCEGFEF8oAQghghDCGaNWJmMWstlsAUARgHUmRDjTyUoA3AACADwAXABUhwvoF8wB3NnxAgATQA5AGoB+JpwgncEEKAC5yuPxpSzLe8m8yVMfuPuqewu64bLtMgcI8EGUOPZ+8EAn+44O+T8BIUQwRriqyOaPn1nx81Ubdu0MSBKP5vPcIcIXSoAB1ueMBYx83vvt2xbdP3Py6AtiiWxp4lxACAExiL2OvR+O/cQwz+U+5d8IIaC01Ksy5MP9ty6SV36w7W+FopBBYmCeDhGkM9n9UCikxRMJ6Zs3X35508jqC/Yd6rYymRxJpVIomjZszo+z6vK+stKXp0kBRikUl4RAwI/+hE80jay+4Fu3XHrZvz+/akUwGPQnk0lzECh+7gSgZdk3zZxPUVjk+ivn3mVaNuL9CSpcQdo0+0JYtg0hhoK2EByESABRAGEDolAajtDTBEBAYgxd+7cgnkhwr0fB9VfMu+uZlz742LLywsGDMgfwL4IASiQS8Pf1pdg/PXDTtY014TFt3TEeT2TohUvvQP3oSScZosPBq1oA4TNGwVD1CKx75WdUUdx8RG3F2P/zN9df+53Hf/uUM7eiwwGnRAB2Oqzv8Xg0K29o48bUTPj21xY9UjRtpbOrh1SOnE6mz7sC3LZKlongEJyDUAqzqKMQXQFqvAYICkHHQyBUwgnBnc/TaJwjEK5GX08H4j2HoaoejKgLT/hw2/71sd5U0uV2W6Zpmg4BxKks7FQNHsXDmD9rGMr3777q6yG/NxCNJbluUTJr4dJSR8pAKQElFJRJSPdsRWLf96FImyEFbwL1LgaVKkEpdRo77UZoac/OWbgUukVILJ7kIb838P27r/p61jAUlVI/AMWZM/k8OIABkMNhNRBP5TxfXTR73nWL53w7kc6jq7uHTpi9hIydNNvZcTIgrD27nke++xeoaWqAVPEQBK0YxCEn22lACAJCPr0CQggE53B7NOjFIjoObCey4haNNeGmaH9qx9bdrZ3hsCoKBcs4FS6gp6j23IZhawACdyw9/x7GKIvF+yF5K8n0eVdACFFCqNLq0L7lp8h0/wGNkxpAtdsAqCDgYEwCo/QUGgGjRxUAhiOCEJg+7wpIngoSiyfAGGN3LL3gHgABZ65uZ+7ks4AgA+AKBAL+VCpFH7jzyitGNVRN74mleH8iRedffRNkxV3afQKAUHQ1P4lkx9sYP2ssiNwAwZoAIWDZAs/+aS0+2d8Jxugw5n1pnoRb0JUQImcvwEMX+cEIUKbvEHXAOWTFjRkXLMWHK56ims/LRzVUTf/unVde+cQzb74YDAa1ZDJpOIBonQkBKADJ54Nq2wW1KuRvWLxgyh35giFi0Tgq6idi3LTzIAR3rBSK/ra3ED3wOkK1DXD7CAQPQ4CAEuDxZ97Ez557F5rHDS7E8RnOLoIHGxFNTEdXysJ//FUYdBgiEEohBMe4qedi77YPEIsdht/rFlcsmHLHb15Zt7Zg5Dt8PuSzWViOKPDTEYEy8Mkq9fuzWUN65FtX3xyp8Nf2xZMiWzDpnEtvKLGoECCEwiomEW15EVTywu2RAEoghAFKAL1oYNVHuxAJ+xH0exAaaN6hnwEvQn4vAj436v0ML27P4b5X4+BCDEjYcOIw95IbkM1btC+eEpEKf+2j37r65mzWkFTV7wcgn0jUT0QAyePxeFO6rsyb2TRt9qRR18aTORGNxsiYqQtQ0zDmKOsDSHWvh5GPglLZIbYLsDoB5GDaFIZpoVA0kNdLLacbyOtF57mIvG4imy/CMG1wARi2QJWX4XfNedz3agK65YDjkMVTCM5R3TAGo6eej2g0RuKpnJg1adR182Y2TUuldMXj8XgdZ42eqggMAB9jTMvn8+pf33jxXaoqqz0dR7iQvHTOxV8dAL4yV+b794AQChABPWcAgoBARzHfC8Eb8M/fuw6GJYbK8mAU4Bz7Dndi2e/WImkYYIzCtDkimgvLtxfQGHLhkYs02BwYAiEOIM5e+FW07d1M4v0JPqaxRv3rGy++66bv/uI7iqJYjudoDRdAYccBPiUUcgdSqbx6+zXzL198/pS7+tM53tPTS2dc9D8xomkqhBCglA5MItmxCkauG1RSYOgW/EEC4bsOBXsKCAporK1EY00YDdVBNFSH0FAdQmN1GPWREEbUhlEZ8qIm6EbTyCps3LoPdk8LPP0tcPXuhtS5DaM8RSye2wQhOOggKpY1guJWIUBx8JNNxKW4eX0kMNq07P0fNx846KhFczh3mR5v902TeyVJqlx62Yy7bS4QjfXDVzES0+ZeNmTxwhlPUkKOzU8gbBvdh3UU7bGgxAIEQb5gIFcoIlcwSvd5A9m8jmxBRzZfEoX+dB7TxtXh0bsuhs+IwYq2wpXpBk10wF1MHB+tKYUQAtPmXgZf5QjE4v3gQmDpZTPuliSp0jBs3/HUIh3O6KkOBPzZrMEevmfJVxsioXHR/jRPp/N07uU3gkkuYBgU16pnDWg0SoFC1oJZtErGDCGQGB3i3DFGwRgFdVxcSigkRpHO6ZjaVItH7l0Cza/BBAMkGZycxGYTAkxyYe5lNyKdztFof5o3VofGPXTvkqXZrMGqAwHNAUR2PAygACSv16vmCgX32MZI0/kzm25NZ3URjcZI/fhzMHrC9AEbfzAQAQJa9Rx4QhNRSO0HlVRQJ0xKKIGum/jeT15BTzQJWXZBL5oYVVeBf/y7pWDO7g0mVDqnY8aEOtx77bl44tk1x8WNIaxLS4A4esJ01I2bhWjrNqJ5VLFgRtNtYxsj7/f2Jvd7vV41l8uZg9UiPY69L3/n9ktvD2pqKJ5Ic8Om5LxFNx0/iCYECJVQN+0+EKaA2wZAGAQASgh0w0Lzvk7sOXQEew72YM+hHuxs6YRp2qC0JMMulwt1dbWoq6tFY30dqqoiGDeqHowOYjhxEsvWmdu8RTfC4JTEE2ke1NTQ/7r90q9nDcPlYexTfsJgAkgVqupNpdOuJedPmjNpbM1VsWSO90WjdNLcJaiI1INz7uz4p8gPCA41OA4jZz0IyhTYRgYEBEIAssQQqdAQ8KkI+lUENRVVYQ2M0VIEqURDuCQJsixDll1Q3AoIZUcXT0jpPYQNK4JlbuScIxypx6Q5i9EXjdJ4MscnN9VeuWTB5DmpdNpVoapltUgwCBRK9r5k+wxAu/Xqc++RJEmK98S47Ksicy66xmFTciIeBASHLzITYxf8BL17ngPAwYWAqrjw9A9uRdGwQCkB5wJuxQXVLUMIMUQohRAwHacIjmtNJRXZvq1IH7bgbVwKSMow9vFQrTBr4TXY37yOxPqTYnRDteu2q+fc89a6XTsMyeaD1KLJBqm9YCpVVL5144XXLJjZdGMsmeVH+mJ0/tXfQN3I8UPV3olCNoJDUgII1C+AxRm44AO8KUkMssQgyyXoyRWK0IsmCkWz9Kmb4JyX+rkYOnuTeGP1dnC4MDqcwgz/KsR7mqFFpoPJ2rBEKBPAJctwKV7s/fNaIskyr6sK1Kuq1LV+66HdoZCb6LpVBGBLACQfoJom9wQC3rrLz5v4Db1oIRaNo6pxEiafs7C0C/QUw1cOKAIEoAyEc9ic49EnX0dbdxyKLIGLo0HOcl9KCHJ6EbMmj8Tf33mFw+WDAoWEQXKHkU20oH3zYxgz/x9BJfcwwcSyWuSYPGshdn38LuKxQ9A8Ci4796w7n3tz6wbTNDs1IJcBLAmAiwUCvlQqRf/h/kU3RUK+hs7epJ3TTbboyq8NUPSk6ZohbOtYB853jFJ884aFyOvGECPmU36QLRDUVFicQybSp6KkgpuQlCDyib3ob/tPVI69BkLYIMOpSFHSQOdfeRtefeoh2p/M2vWRQMMDX7v4xgf/9Y2fVAcULZMqFiVN05RUKkVnTxk5YdakxutTWV3EYjE6bsYlqB81AZyf+u4LIcDLoS4nPE4JgcU5/uPF1WjriUORXcMSlBKCvG7gnMkj8eBdSwb1EUM/hA3KZGSOfIzKsdcMD8qOWuSco37URIybsRBtze9Tn9ctZp7VeP3sKQ0rNn/SuV3TNEVSVS5lMqD333DBfT6P29vd2297AlVswZW3nhT4bF6K/Q3s+DGB/wGjh1I8+s2rYFr2CccTQkBxSTBtDlkmQ3Sb5KKOvAsQwmAVkxDcBKGuYcVgMB6cv+QWRFt3klw2Z9dGQt77b7jovlsffu4+VeXSgCHEBQfn3NlBcVxVc+yuCcYG+pcJUZ6OII67DALN6y71P0n4iQsBy7JR7skYgbAEVL+KQIWKVJsOiQkQJpdU4qlk+MjR9QnBHWB21lAoUAsAf/KFNT9PZfI5j+qm2f4jYs2KZ08q/6TsDQpRIh7n4Nw+mhkiFJRQEELAOWDZArbNYdvCaXzIs2WXALPESKV35/JFZHMWpjUBwSovAALBLbi1ESV3WPATchQhBGvfWI5sold4PCpNpvO5J19Y83MAXNeZSTOZTDEQUPjmvZ37tuzu+L3XLZFgKMz3bF6FzkN7SojK+QmJwBiDy+WCLMtQFAWMUkAAlmmiWDRgGAZMs9zMgXvDNAeeDdOAbdsoO9hCCKhuCRPGjMLDX/fg5sU6CqYESSrxRqDhwhPjkYNdnYf2YM+WVQgGQ9zrlsiW3R2/37y3c18w6ObpdNogABQfoEGWK5mL1C97+Prf+LzuhraOHq7Vjqe3/M0TjtydehZn/8FDyOVyp646HYNHURTU1dYOEIAxAp9XA/hrQOY/keqT0LpzP4L1czFyzg+O2h7HGQ8geP5fvovMkRY+qrGWpnOFrnt/9IfbbVN0EsOIZoAsBWBlgYLLS/OpXLH7vY/3/dLFgFA4iJ6Dzdix6T3HxLRPPX99Gn0HC+qx4lYGTCtrA2BIxxKQ3BWonXofTuQhcW6DEIodm95Dz8FmhENBuCjB+5tanknlil0uL81nSplkq5x9NhMJPaNpsv30q5tWtnYntoZ8bhrQfHzdimehF3KOvImTqkEA0HwaLNsehAsnb0IIFIsGisXiAPZIUkllSrQdhWQemaSF0ec+DNlTU3KMhiFCOUapF3JY/+azCGg+HtRU2trTv+XpVzet1DSZJxJ6xskhcjZYeWlMZrZlkZxZ7DtnYsMVLlkmfb1dsGxCxk6aeVK1WP7N5/MOuLmy7DpJkyE7+CFJEggl8Hg8UGQJiuIGsXbCzryGnnYJtVMfgLdikhN4ocfdBEop1qx4Du27PxQ1NVUgwrZ+/dqmH3Z2Jw54mJwuWFa2nESVBhHAihcKOb9f8azaeHDzJbPHrZgxvv6vwqGgvXX1K2z6vMtRWdMw5OXl3B4ph2zL4WsANdXVqK6qGhi8pAKH09diILhZ0halMDshDNxohUgvQyrRiKpJd8MTqAe3LScOyJ3/kiHzoZQgdqQDf179KkKhEA94ZLatpfP1VZsPfuz3K2Y8Xcg5jhAfNiYoSTYIkZWW1t6O+dNGL/J6FDWVTCIei5Ipsy8ewgXll5c+h7ajvzvPw/Q5ti8IAaHUGbMNhL8D6loIteZ2uNz+AQvv6DvpEI4ss/8by3+KTPSwqKmqIPl8Ifn48tU/yBd5lBAjZZrIDa4nko6pvbFyORQCAaK39iQPbNrV9txlc8bdXxEK8QPb15KWnR9j/NQ5sG0LjEnobG3B4ZZP0Dhm4oDcFvU8inoBqUQMAODxasjnMhg7cRrifT2l4KUQKBbycHu8yKQSmHneJdi45k2EwhEk+vsQ0IpIxZoRrrsc4chZyLTtACCQSsThVr3IZlLwaQHkcxn4A2GMmzxzYE4tOz/Ggea1qKuuEh6F0lXNnctbu5MHAwGlkEohP3j3hwuL2wCMVKqY9smy8uRLG16ePDqypCLoG5dOK/y9l5fRMWfNAHVY7u0/LYfmD6H1wC709XQgWBGBaRjIZZK46vq7sXnd21DcKuJ93di17aOjRosQCFfV4lDLTsy/+H+gu/0ANqx6DWedPRc9HYdwzrxLsfGjNBj7A+pHjkEuk0Yi1guPzw8tEEastwsXXL4U7772HC77yi0D1qZlmXjv5V/Ap8o8qLlpd19q/7/9Yf0rPlm2U6liBoBxbPXIcEk6C4Du8tKcZSH69sb9yzi3EQwGEG3fi03vvwbKSlGZuRcsQSBciYpIPbraDoDbNmrqR8K2LZiGgfFTzkFN/ShMmDYbLpeCqppGBMOVcHt8uO72v8W5F5YSq5HaEZg4dTY8Xq1kAHk1JPvb0TRxGtLJBFSvBrfHh8bRE/CVm+5DLpNCZU0Dzp6zEC7ZDUIAyhg2vf8nRDv2IhgIQAgbb3+4f5llISr7WPaY3MAJM0NltZjVNNn+4/ufrD7cnVgT9Mk0FAzwdSueRSoRgwDQ19OOvTs2o7e7DZZpoKgXYNsWKJMwcdpsJPv7YFkG9mzfBNs2Ee1pR6o/Br2QwzP//CD6etqxY8s6JOJ9iPV24aPVb8Lj1ZBNJ1FbPwaEMvR1t8MyilA9XhzatwPL//1H8PmDSPb34UjnYWzZ8A4ggFQiivVvLkco4OdBTaaHuuJr/rj6k9WaJtv9/YUy6vNTrROkABSPB0HLQmjK6NoZf3fTvKdtQd2t7V2YOv8r5Jo7vofDLTtRyGdR0zAavd3t8GlBuGQZ+WwaYyZMQ293GxS3iv27/owRY89CMh6FrCgACAxDH/DZmyZOx+YN76Bx9AR0tx2A6tUQqoiASRKy6STcqgeyoqKvpx1eLVDCArcHhUIWkdpG1DWOxau//jF2rX9NjBxRD0q4/sRvP7xrz+GebZKERD6PpFNFdsoEKMcJVb9fqUqni56/v2XBd+dMabi1K5rm0USafuOhZWgcc9b/EwXPHYf24Ff/cC+qQn5eV6nRjbs7n3t8+bon/H4ln04XowDyxyuiPGmFiKtoQ5Zl97aD3e3zpzZeonlVLZvJiJ6uDjJj/mJw2xpkJZaCIRBAd8dBrF75ezRNmomtG97FB2/9Hj0dh7Fz63r4fAGse+cVEEqx8qVnQAjF+2/+DhWRWsR6u/HWy79CIZ/FRx+8Adu2sfKPv0TjqPFwe3yD6opQsglA8NJTP0IxdYTXVIVIKpM/8vjza3/IBEtm8kbieLJ/KhUivOwnSB6aT6SLneuaO34lM5BwKITW3ZvQvPE9MMk1EDMkhDpsTXG4ZRfaD+1DV2sLahpGl9i+qKPtwG7s3LoeO7asw8G9zRBc4P0VL0Iv5BEMR7BnxyYU8llsXLMS/bFevPTrn6K2YRR0PQ/q2A2UluoMmeRC88ZVaNuzqWTvM5D1O9p+2Z8udkoemh+0eH6mJTI2ACOZ1DM+WbaXv7V9ZWdfanvAJ9OAz8Pffekp6IX8sHEDzR9AX087Du//BKGKCELhKlBKUchnYVmmg/RRNI4eX7L5OYckuSBJLlTXjYChF6B6vDhr2hyMHDsJgWCls4VkwBjTC3ms+uMy+H1eHvDJtKM3tf3Zt3as9MkyTyYH7H37s9QICWcAXWYsCyC1Yv2+ZYZp2sGAH6neVrFmxfPDBibyuSzcqgehyhrYtgXbtqAFwhg3aSYO7m1GRVUt4n1d2LXtIwQrqmBzG8n+KFSvhpZPtiIYrsLlX7kN0+dehN8uewxHuloHCF02x9eseB7J3lYRCmgwDNN+ff2+ZQBSMmMZp274pBXk5DTqg72aJkcyGcP7yO0LfjhpVOVVndGUncpZ7NuPvYDK6nqIQXED27LQ29OOykgdJJeMop4HIRS2ZUIIDp8/hGR/FEU9j8rqkh1RUVUL1ashdqQTwYqIY5q7EO3tRHXdyIFAByEEsd4u/OuDNyPgcdn1ET/bfTi24ke/WfeopsnZTMboc4DvpARgp4O2kmQTQmS5rau/c/bE2sWqW3EnE3H0J/rJ2eddCtu2AHHUI/MHwyWjCQKy7AaTJMiKG7KiwrYteLwafFoQABAMV5UKrhziUMbAKAMIoPlDpRI7IcAFB2UMLz/zGOIde0VNVYjoupl+8pUt/7tgiF5KjeSx9v5nLZQcMI7yeeRVleiHjqRatrUcecEjU1IZDovdG9/B/p2bIUkuUMZAGRvIIB8FLQxxXBiThiQyjt4f7UucYkoAoEwCZQyS5ML+nZuxe9M7qAiHhSpTsq3lyAttR1L7VZXoudyn7f3P68AEdfLrPp8sRwq2Xf3jey98JqSpY7p7+7mvqpGePf9KWLb9hZ6akRhF84aVyMU6eG11iCbShUPfe2rNnSpjvVnD6AOQOZ7V91mLpbkzsO6iNJs1DLJme/vT1ywY91jA7+OZ/i7x9gv/BMsqhdYHM9+pnBfAcSsHj3amhECSKAIBP/yaVxDB6drm9l/Ytt3ncrmyg4CPf1HnBTgAI6HrGU2T1dc3HHh3zsTqJRNHVFzgdUuoqQwOSpGRk5x5OhUSDE2xEFLKIQrB4fe4sLs9vva19Qfe1TTZSmT0srfHv8gTIwPeom1LKRkG/9OGgz+7llHDMGyXJQSDKMe1T/PIyInWP7gvgZAIsWWZma9vOPhzGcjYtpQBjDM6OPVZD035AXidZ8+XfGiqDHaf6dDU53BsDqrL5VY5FxLnguFLuCglNqXEMk29kM3iL3Js7ngHJ8mXeGqUO4v+ixyc/P/m6Ox/X//Vr/8LmeMXF75INbIAAAAASUVORK5CYII=">
+  <meta name="description" content="High-precision Pag-IBIG Fund housing loan PDF form automation system for Summerfield Resources Corporation.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- CDN Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-primary: #F5F7FB;
+      --bg-secondary: #FFFFFF;
+      --glass-surface: #FFFFFF;
+      --glass-surface-hover: #F1F5F9;
+      --glass-border: #E2E8F0;
+      --glass-border-focus: rgba(79, 70, 229, 0.55);
+      --glass-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 6px 20px rgba(15, 23, 42, 0.06);
+
+      --accent-primary: #4F46E5;
+      --accent-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      --accent-emerald: #059669;
+      --accent-emerald-glow: rgba(5, 150, 105, 0.22);
+      --accent-blue: #2563EB;
+      --accent-blue-glow: rgba(37, 99, 235, 0.22);
+      --accent-amber: #B45309;
+
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-dim: #64748B;
+
+      --input-bg: #FFFFFF;
+      --readonly-bg: #F1F5F9;
+      --soft-fill: rgba(15, 23, 42, 0.03);
+      --soft-border: rgba(15, 23, 42, 0.08);
+      --preview-bg: #E2E8F0;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-primary);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-panel {
+      background: var(--glass-surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .glass-card {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      transition: all 0.2s ease;
+    }
+    .glass-card:hover {
+      background: var(--glass-surface-hover);
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+
+    /* Top Navbar */
+    header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1100px) {
+      header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      .brand-logo {
+        height: 40px;
+      }
+      .header-actions {
+        flex-wrap: wrap;
+      }
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
+      color: #FFF;
+    }
+
+    .brand-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .brand-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn i.fi, .search-icon i.fi {
+      line-height: 1;
+      display: inline-flex;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #FFF;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--glass-surface);
+      border-color: var(--glass-border);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      background: var(--glass-surface-hover);
+      border-color: #CBD5E1;
+    }
+    .btn-emerald {
+      background: var(--accent-emerald);
+      color: #FFF;
+      box-shadow: 0 4px 16px var(--accent-emerald-glow);
+    }
+    .btn-emerald:hover {
+      box-shadow: 0 6px 22px var(--accent-emerald-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      padding: 24px 32px;
+      max-width: 1560px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+    }
+
+    /* Left Sidebar: Buyer List */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: calc(100vh - 120px);
+      position: sticky;
+      top: 88px;
+    }
+
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px 10px 38px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--accent-primary);
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .buyer-list {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 4px;
+    }
+    .buyer-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .buyer-list::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: var(--radius-full);
+    }
+
+    .buyer-item {
+      padding: 12px 14px;
+      cursor: pointer;
+      position: relative;
+    }
+    .buyer-item.active {
+      background: #EEF2FF;
+      border-color: var(--accent-primary);
+    }
+    .buyer-item-name {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .buyer-item-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-affordable {
+      background: #ECFDF5;
+      color: #047857;
+      border: 1px solid #A7F3D0;
+    }
+    .badge-enduser {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+    }
+
+    /* Main Workspace / Edit Form */
+    .workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+    }
+    .buyer-title-group h2 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .buyer-title-group p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--glass-border);
+      padding: 0 24px 12px 24px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--accent-primary);
+      background: #EEF2FF;
+    }
+
+    .tab-content {
+      padding: 20px 24px;
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Grid Form */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .form-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+    .form-group label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      background: var(--input-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--glass-border-focus);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+    textarea.form-control {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    /* Output & Action Section */
+    .actions-panel {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .stage-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stage-switch select {
+      background: var(--input-bg);
+      color: var(--text-main);
+      border: 1px solid var(--glass-border);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* PDF Preview Section */
+    .preview-panel {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-canvas-container {
+      background: var(--preview-bg);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 480px;
+      overflow: auto;
+      border: 1px solid var(--glass-border);
+    }
+    #pdf-canvas {
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.18);
+      border-radius: 4px;
+      max-width: 100%;
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .form-item-card {
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: var(--radius-sm);
+      background: var(--soft-fill);
+      border: 1px solid var(--soft-border);
+    }
+    .form-item-title {
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 160px;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-backdrop.show {
+      display: flex;
+    }
+    .modal-box {
+      width: 520px;
+      max-width: 90vw;
+      padding: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header>
+    <div class="brand">
+      <img class="brand-logo" src="data:image/png;base64,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" alt="SwiftDocs Services &amp; Trade OPC">
+      <div class="brand-text">
+        <h1>Pag-IBIG Forms Automation</h1>
+        <p>Summerfield Resources · Bloomfield Terraces, Morong, Rizal</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <input type="file" id="excel-file-input" accept=".xlsx" style="display: none;" onchange="handleExcelUpload(event)">
+      <button class="btn btn-secondary" onclick="document.getElementById('excel-file-input').click()">
+        <i class="fi fi-rs-folder-open" aria-hidden="true"></i> Load Excel (BookData.xlsx)
+      </button>
+      <button class="btn btn-secondary" onclick="exportExcel()">
+        <i class="fi fi-rs-disk" aria-hidden="true"></i> Export Excel
+      </button>
+      <button class="btn btn-secondary" onclick="openSettingsModal()">
+        <i class="fi fi-rs-settings" aria-hidden="true"></i> Settings
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Left Sidebar: Buyer List & Controls -->
+    <aside class="sidebar glass-panel" style="padding: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700; font-size: 14px;">Buyers Directory</span>
+        <span id="buyer-count" class="badge" style="background: #F1F5F9; color: var(--text-muted);">4 Buyers</span>
+      </div>
+
+      <div class="search-box">
+        <span class="search-icon"><i class="fi fi-rs-search" aria-hidden="true"></i></span>
+        <input type="text" id="search-input" placeholder="Search by name, block, lot, TCT..." oninput="handleSearch(this.value)">
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-primary" style="flex: 1; font-size: 12px; padding: 7px 10px;" onclick="addNewBuyerManually()">
+          <i class="fi fi-rs-user-add" aria-hidden="true"></i> New Buyer
+        </button>
+        <button class="btn btn-secondary" style="font-size: 12px; padding: 7px 10px;" onclick="openHlaModal()">
+          <i class="fi fi-rs-cloud-upload" aria-hidden="true"></i> HLA Scan
+        </button>
+      </div>
+
+      <div class="buyer-list" id="buyer-list-container">
+        <!-- Dynamically rendered buyer cards -->
+      </div>
+    </aside>
+
+    <!-- Main Workspace / Form Editor -->
+    <section class="workspace">
+      <!-- Buyer Header Card -->
+      <div class="glass-panel form-header-bar">
+        <div class="buyer-title-group">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <h2 id="view-principal-name">JUAN DELA CRUZ</h2>
+            <span id="program-badge" class="badge badge-affordable">Affordable Housing (&lt; ₱950k)</span>
+          </div>
+          <p id="view-property-line">BLOCK 7 LOT 14 · BLOOMFIELD TERRACES, MORONG, RIZAL</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-emerald" onclick="saveCurrentBuyerToMemory()">
+            <i class="fi fi-rs-check" aria-hidden="true"></i> Update In-Memory
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabs Navigation -->
+      <div class="glass-panel" style="padding: 0;">
+        <div class="tabs" style="padding-top: 16px;">
+          <button class="tab-btn active" onclick="switchTab('parties')">1. Parties & Property</button>
+          <button class="tab-btn" onclick="switchTab('financials')">2. Financials & Amortization</button>
+          <button class="tab-btn" onclick="switchTab('techdesc')">3. Technical Description</button>
+          <button class="tab-btn" onclick="switchTab('notary')">4. Notary & Witnesses</button>
+        </div>
+
+        <!-- Tab 1: Parties & Property -->
+        <div id="tab-parties" class="tab-content active">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Principal Borrower (Col A)</label>
+              <input type="text" id="f-principal" class="form-control" oninput="updateCurrentField('principal_borrower', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Marital Status & Spouse (Col B)</label>
+              <input type="text" id="f-status" class="form-control" placeholder="Single or Married to FULL NAME" oninput="updateCurrentField('status', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Co-Borrower (Col C)</label>
+              <input type="text" id="f-co-borrower" class="form-control" placeholder="N/A if none" oninput="updateCurrentField('co_borrower', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Co-Borrower Status</label>
+              <input type="text" id="f-co-status" class="form-control" placeholder="Single or Married to..." oninput="updateCurrentField('co_borrower_status', this.value)">
+            </div>
+            <div class="form-group full-width">
+              <label>Present Address (Col D)</label>
+              <input type="text" id="f-address" class="form-control" oninput="updateCurrentField('address', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Block & Lot (Col E)</label>
+              <input type="text" id="f-block-lot" class="form-control" placeholder="BLOCK 7 LOT 14" oninput="updateCurrentField('block_lot', this.value); updateTechDescPreview();">
+            </div>
+            <div class="form-group">
+              <label>Title Number (TCT) (Col F)</label>
+              <input type="text" id="f-title-no" class="form-control" oninput="updateCurrentField('title_no', this.value)">
+            </div>
+            <div class="form-group">
+              <label>TIN Principal (Col M)</label>
+              <input type="text" id="f-tin-principal" class="form-control" oninput="updateCurrentField('tin_principal', this.value)">
+            </div>
+            <div class="form-group">
+              <label>TIN Spouse (Col O)</label>
+              <input type="text" id="f-tin-spouse" class="form-control" oninput="updateCurrentField('tin_spouse', this.value)">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Financials & Amortization -->
+        <div id="tab-financials" class="tab-content">
+          <div class="form-grid cols-3">
+            <div class="form-group">
+              <label>Total Consideration (Price) (Col I)</label>
+              <input type="number" id="f-consideration" class="form-control" oninput="updateCurrentField('consideration', parseFloat(this.value)||0); recalculateEquity();">
+            </div>
+            <div class="form-group">
+              <label>Loanable Amount (Col J)</label>
+              <input type="number" id="f-loanable" class="form-control" oninput="updateCurrentField('loanable_amount', parseFloat(this.value)||0); recalculateEquity(); updateProgramBadge();">
+            </div>
+            <div class="form-group">
+              <label>Calculated Equity (Price - Loan)</label>
+              <input type="text" id="f-equity" class="form-control" readonly style="background: var(--readonly-bg); color: #047857; font-weight: 700;">
+            </div>
+            <div class="form-group">
+              <label>Interest Rate (Col H)</label>
+              <input type="text" id="f-interest-rate" class="form-control" oninput="updateCurrentField('interest_rate', parseFloat(this.value)||0.0625)">
+            </div>
+            <div class="form-group">
+              <label>Loan Term (Years)</label>
+              <input type="number" id="f-loan-term" class="form-control" value="30" oninput="updateCurrentField('loan_term_years', parseInt(this.value)||30)">
+            </div>
+            <div class="form-group">
+              <label>Re-pricing Period (Years)</label>
+              <input type="number" id="f-repricing" class="form-control" value="1" oninput="updateCurrentField('repricing_years', parseInt(this.value)||1)">
+            </div>
+            <div class="form-group">
+              <label>MRI / SRI Monthly</label>
+              <input type="number" id="f-mri" class="form-control" oninput="updateCurrentField('mri_sri', parseFloat(this.value)||0)">
+            </div>
+            <div class="form-group">
+              <label>Non-Life Monthly</label>
+              <input type="number" id="f-nonlife" class="form-control" oninput="updateCurrentField('non_life', parseFloat(this.value)||0)">
+            </div>
+            <div class="form-group">
+              <label>Principal & Interest (P&I)</label>
+              <input type="number" id="f-pi" class="form-control" oninput="updateCurrentField('principal_interest', parseFloat(this.value)||0)">
+            </div>
+          </div>
+          <div style="margin-top: 14px; padding: 12px; background: #EEF2FF; border-radius: var(--radius-sm); border: 1px solid #C7D2FE;">
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Amount in Words Preview:</span>
+            <p id="amount-words-preview" style="font-size: 13px; font-weight: 600; margin-top: 4px; color: var(--text-main);">-</p>
+          </div>
+        </div>
+
+        <!-- Tab 3: Technical Description -->
+        <div id="tab-techdesc" class="tab-content">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label>Technical Description (Col G) - Starts 2 inches from left edge, Courier font</label>
+              <textarea id="f-techdesc" class="form-control" rows="5" oninput="updateCurrentField('tech_desc', this.value); updateTechDescPreview();"></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label>Technical Description Continued (Col K)</label>
+              <textarea id="f-techdesc-cont" class="form-control" rows="3" oninput="updateCurrentField('tech_desc_cont', this.value); updateTechDescPreview();"></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label>Short-Form Preview (Used in Deed of Absolute Sale & LMAs without Annex)</label>
+              <textarea id="f-techdesc-short" class="form-control" rows="5" readonly style="background: var(--readonly-bg); color: var(--text-muted);"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Notary & Witnesses -->
+        <div id="tab-notary" class="tab-content">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>CTS Date of Notarization (mm/dd/yyyy)</label>
+              <input type="text" id="f-date-notarization" class="form-control" oninput="updateCurrentField('date_notarization', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Notary of CTS Details (Col L)</label>
+              <input type="text" id="f-notary-cts" class="form-control" oninput="updateCurrentField('notary_cts', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Attorney-in-Fact (if applicable)</label>
+              <input type="text" id="f-aif" class="form-control" placeholder="Leave empty if none" oninput="updateCurrentField('attorney_in_fact', this.value)">
+            </div>
+            <div class="form-group">
+              <label>AIF Relationship</label>
+              <input type="text" id="f-aif-rel" class="form-control" oninput="updateCurrentField('attorney_in_fact_rel', this.value)">
+            </div>
+          </div>
+        </div>
+
+        <!-- Generation & Action Bar -->
+        <div class="actions-panel" style="border-top: 1px solid var(--glass-border);">
+          <div class="stage-switch">
+            <label style="font-size: 12px; color: var(--text-muted); font-weight: 600;">STAGE:</label>
+            <select id="stage-selector" onchange="renderFormsList()">
+              <option value="PRE-APPROVAL" selected>PRE-APPROVAL</option>
+              <option value="POST-APPROVAL">POST-APPROVAL</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary" onclick="generateAllFormsZip()">
+              <i class="fi fi-rs-file-zipper" aria-hidden="true"></i> Download All Forms (.ZIP)
+            </button>
+            <button class="btn btn-primary" onclick="previewCurrentForm()">
+              <i class="fi fi-rs-eye" aria-hidden="true"></i> Live PDF Preview
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generated Forms & PDF Preview -->
+      <div class="glass-panel preview-panel">
+        <div class="preview-header">
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Documents Ready for Generation</h3>
+            <p style="font-size: 11px; color: var(--text-muted);">Exact Pag-IBIG Fund standard forms formatted with original text rules</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 11px;" onclick="prevPdfPage()">◀ Prev</button>
+            <span id="page-num-indicator" style="font-size: 12px; align-self: center; font-weight: 600;">Page 1</span>
+            <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 11px;" onclick="nextPdfPage()">Next ▶</button>
+          </div>
+        </div>
+
+        <div class="forms-grid" id="forms-grid-container">
+          <!-- Form action cards -->
+        </div>
+
+        <div class="preview-canvas-container">
+          <canvas id="pdf-canvas"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Settings Modal -->
+  <div class="modal-backdrop" id="settings-modal">
+    <div class="glass-panel modal-box">
+      <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 16px;">System Settings</h3>
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label>Developer Name</label>
+        <input type="text" id="s-dev-name" class="form-control" value="SUMMERFIELD RESOURCES CORPORATION">
+      </div>
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label>Developer Representative</label>
+        <input type="text" id="s-dev-rep" class="form-control" value="JENNIFER B. PEDUCA">
+      </div>
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label>Project Address</label>
+        <input type="text" id="s-proj-addr" class="form-control" value="BLOOMFIELD TERRACES, Brgy. Maybancal, Morong, Rizal">
+      </div>
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label>BVS Municipality</label>
+        <input type="text" id="s-bvs-mun" class="form-control" value="MORONG, RIZAL">
+      </div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label>Anthropic API Key (forgotten when this tab is closed)</label>
+        <input type="password" id="s-api-key" class="form-control" placeholder="sk-ant-...">
+      </div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn btn-secondary" onclick="closeSettingsModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveSettings()">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HLA Scan Upload Modal -->
+  <div class="modal-backdrop" id="hla-modal">
+    <div class="glass-panel modal-box">
+      <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 14px;">Upload HLA Application Scan</h3>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+        Upload Housing Loan Application photos or PDF. Claude reads the entries and fills a new buyer for you to check. The files are sent from this browser to Anthropic (api.anthropic.com) only.
+      </p>
+      <div class="form-group" style="margin-bottom: 14px;">
+        <label>Select HLA Image(s) or PDF</label>
+        <input type="file" id="hla-file-input" class="form-control" accept="image/*,application/pdf" multiple>
+      </div>
+      <div id="hla-status" style="font-size: 12px; margin-bottom: 12px; display: none;"></div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn btn-secondary" onclick="closeHlaModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="processHlaScan()">Scan & Fill</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client-Side Engine and PDF-Lib Integration -->
+  <script>
+    // Initial Mock / Sample Buyers Dataset
+    let buyersData = [
+      {
+        row_idx: 2,
+        principal_borrower: "JUAN DELA CRUZ",
+        status: "Single",
+        co_borrower: "N/A",
+        address: "123 SAMPAGUITA ST., MORONG, RIZAL",
+        block_lot: "BLOCK 7 LOT 14",
+        title_no: "T-892134",
+        tech_desc: "Survey Plan No. : PCS-04-030177\nPortion of Lot : BLOCK 7, LOT 14\nLRC Record No. : N-17185",
+        interest_rate: 0.0625,
+        consideration: 1150000,
+        loanable_amount: 850000,
+        tech_desc_cont: "Area : THIRTY SIX (36) SQUARE METERS more or less.",
+        notary_cts: "Doc 10, Page 2, Book 11, Series of 2026",
+        tin_principal: "123-456-789-000",
+        tin_co_borrower: "N/A",
+        tin_spouse: "N/A",
+        date_notarization: "10/16/2026",
+        loan_term_years: 30,
+        repricing_years: 1,
+        mri_sri: 350.0,
+        non_life: 220.0,
+        principal_interest: 5230.50,
+        attorney_in_fact: "",
+        attorney_in_fact_rel: "",
+        house_type: "TOWNHOUSE",
+        lot_area: 36.0,
+        co_borrower_status: "",
+        email: "juan.delacruz@example.com"
+      },
+      {
+        row_idx: 3,
+        principal_borrower: "ROBERTO SANTOS",
+        status: "Married to MARIA SANTOS",
+        co_borrower: "EDUARDO DELOS REYES",
+        address: "456 RIZAL AVE., MAYBANCAL, MORONG, RIZAL",
+        block_lot: "BLOCK 12 LOT 5",
+        title_no: "T-994321",
+        tech_desc: "Survey Plan No. : PCS-04-030177\nPortion of Lot : BLOCK 12, LOT 5\nLRC Record No. : N-17185",
+        interest_rate: 0.0625,
+        consideration: 1600000,
+        loanable_amount: 1250000,
+        tech_desc_cont: "Area : FORTY (40) SQUARE METERS more or less.",
+        notary_cts: "Doc 45, Page 9, Book 12, Series of 2026",
+        tin_principal: "234-567-890-000",
+        tin_co_borrower: "345-678-901-000",
+        tin_spouse: "456-789-012-000",
+        date_notarization: "10/16/2026",
+        loan_term_years: 30,
+        repricing_years: 3,
+        mri_sri: 420.0,
+        non_life: 280.0,
+        principal_interest: 7700.25,
+        attorney_in_fact: "",
+        attorney_in_fact_rel: "",
+        house_type: "TWO-STOREY TOWNHOUSE",
+        lot_area: 40.0,
+        co_borrower_status: "Married to CARMEN DELOS REYES",
+        email: "roberto.santos@example.com"
+      },
+      {
+        row_idx: 4,
+        principal_borrower: "ANNA MARIE SAN JOSE",
+        status: "Single",
+        co_borrower: "N/A",
+        address: "789 QUEZON BLVD., MORONG, RIZAL",
+        block_lot: "BLOCK 3 LOT 9",
+        title_no: "T-772156",
+        tech_desc: "Survey Plan No. : PCS-04-030177\nPortion of Lot : BLOCK 3, LOT 9\nLRC Record No. : N-17185",
+        interest_rate: 0.0625,
+        consideration: 1200000,
+        loanable_amount: 949999,
+        tech_desc_cont: "Area : THIRTY SIX (36) SQUARE METERS more or less.",
+        notary_cts: "Doc 12, Page 3, Book 11, Series of 2026",
+        tin_principal: "567-890-123-000",
+        tin_co_borrower: "N/A",
+        tin_spouse: "N/A",
+        date_notarization: "10/16/2026",
+        loan_term_years: 25,
+        repricing_years: 1,
+        mri_sri: 380.0,
+        non_life: 240.0,
+        principal_interest: 5840.10,
+        attorney_in_fact: "CARLITO SAN JOSE",
+        attorney_in_fact_rel: "BROTHER",
+        house_type: "TOWNHOUSE",
+        lot_area: 36.0,
+        co_borrower_status: "",
+        email: "anna.sanjose@example.com"
+      },
+      {
+        row_idx: 5,
+        principal_borrower: "CRISTINA DE CASTRO",
+        status: "Married to FERDINAND DE CASTRO",
+        co_borrower: "N/A",
+        address: "UNIT 501 TOWER B, RESIDENCES AT MORONG, BRGY. MAYBANCAL, MORONG, RIZAL",
+        block_lot: "BLOCK 15 LOT 22",
+        title_no: "T-883344",
+        tech_desc: "Survey Plan No. : PCS-04-030177\nBlock No. : 15    Lot No. : 22\nPortion of Lot : BLOCK 15, LOT 22\nLRC Record No. : N-17185\nBoundaries : NE Lot 21, SE Road Lot 4, SW Lot 23, NW Lot 10\nBeginning at a point marked 1 on plan being N 45 deg 30 min E 2500.50 m from BLLM No. 1 Morong",
+        interest_rate: 0.0625,
+        consideration: 1400000,
+        loanable_amount: 950000,
+        tech_desc_cont: "Area : FORTY TWO (42) SQUARE METERS more or less.",
+        notary_cts: "Doc 88, Page 17, Book 14, Series of 2026",
+        tin_principal: "678-901-234-000",
+        tin_co_borrower: "N/A",
+        tin_spouse: "789-012-345-000",
+        date_notarization: "10/16/2026",
+        loan_term_years: 30,
+        repricing_years: 3,
+        mri_sri: 400.0,
+        non_life: 260.0,
+        principal_interest: 5850.75,
+        attorney_in_fact: "",
+        attorney_in_fact_rel: "",
+        house_type: "TOWNHOUSE",
+        lot_area: 42.0,
+        co_borrower_status: "",
+        email: "cristina.decastro@example.com"
+      }
+    ];
+
+    let currentBuyerIndex = 0;
+    let currentPdfDoc = null;
+    let currentPdfPageIdx = 1;
+
+    // --- Number to Words ---
+    const ONES = ["", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN"];
+    const TENS = ["", "", "TWENTY", "THIRTY", "FORTY", "FIFTY", "SIXTY", "SEVENTY", "EIGHTY", "NINETY"];
+    const SCALES = ["", "THOUSAND", "MILLION", "BILLION"];
+
+    function integerToWords(num) {
+      if (num === 0) return "ZERO";
+      if (num < 0) return "NEGATIVE " + integerToWords(Math.abs(num));
+      let groups = [];
+      let scaleIdx = 0;
+      let temp = num;
+
+      while (temp > 0) {
+        let n = temp % 1000;
+        if (n !== 0) {
+          let words = [];
+          if (n >= 100) {
+            words.push(ONES[Math.floor(n / 100)] + " HUNDRED");
+            n %= 100;
+          }
+          if (n >= 20) {
+            let t = TENS[Math.floor(n / 10)];
+            if (n % 10 !== 0) t += " " + ONES[n % 10];
+            words.push(t);
+          } else if (n > 0) {
+            words.push(ONES[n]);
+          }
+          let groupStr = words.join(" ");
+          if (SCALES[scaleIdx]) groupStr += " " + SCALES[scaleIdx];
+          groups.unshift(groupStr);
+        }
+        temp = Math.floor(temp / 1000);
+        scaleIdx++;
+      }
+      return groups.join(" ");
+    }
+
+    function amountToWords(amt) {
+      if (isNaN(amt) || amt === null) return "";
+      let totalCents = Math.round(amt * 100);
+      let pesos = Math.floor(totalCents / 100);
+      let cents = totalCents % 100;
+      let pWords = integerToWords(pesos);
+      let centsStr = (cents < 10 ? "0" : "") + cents;
+      return `${pWords} PESOS AND ${centsStr}/100`;
+    }
+
+    function extractSurname(fullName) {
+      if (!fullName) return "";
+      let name = fullName.trim();
+      let upper = name.toUpperCase();
+      const prefixes = ["DE LA ", "DELA ", "DE LOS ", "DELOS ", "DE LAS ", "DELAS ", "DE ", "DEL ", "SAN ", "SANTA ", "SANTO "];
+      for (let p of prefixes) {
+        let pos = upper.lastIndexOf(p);
+        if (pos !== -1) return name.substring(pos).trim();
+      }
+      let parts = name.split(/\s+/);
+      return parts.length > 1 ? parts[parts.length - 1] : name;
+    }
+
+    // --- UI State & Navigation ---
+    function initApp() {
+      renderBuyerList();
+      selectBuyer(0);
+      loadSettings();
+    }
+
+    function renderBuyerList(filtered = null) {
+      const list = filtered || buyersData;
+      const container = document.getElementById("buyer-list-container");
+      container.innerHTML = "";
+      document.getElementById("buyer-count").textContent = `${list.length} Buyers`;
+
+      list.forEach((b, idx) => {
+        const isAffordable = (b.loanable_amount || 0) < 950000;
+        const card = document.createElement("div");
+        card.className = `glass-card buyer-item ${idx === currentBuyerIndex ? 'active' : ''}`;
+        card.onclick = () => selectBuyer(buyersData.indexOf(b));
+        card.innerHTML = `
+          <div class="buyer-item-name">${b.principal_borrower || 'Untitled Buyer'}</div>
+          <div class="buyer-item-sub">
+            <span>${b.block_lot || 'No Block/Lot'}</span>
+            <span class="badge ${isAffordable ? 'badge-affordable' : 'badge-enduser'}">
+              ₱${Number(b.loanable_amount || 0).toLocaleString()}
+            </span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function selectBuyer(index) {
+      if (index < 0 || index >= buyersData.length) return;
+      currentBuyerIndex = index;
+      const buyer = buyersData[index];
+
+      // Update Header
+      document.getElementById("view-principal-name").textContent = buyer.principal_borrower || "NEW BUYER";
+      document.getElementById("view-property-line").textContent = `${buyer.block_lot || ''} · BLOOMFIELD TERRACES, MORONG, RIZAL`;
+
+      // Fill Inputs
+      document.getElementById("f-principal").value = buyer.principal_borrower || "";
+      document.getElementById("f-status").value = buyer.status || "";
+      document.getElementById("f-co-borrower").value = buyer.co_borrower || "";
+      document.getElementById("f-co-status").value = buyer.co_borrower_status || "";
+      document.getElementById("f-address").value = buyer.address || "";
+      document.getElementById("f-block-lot").value = buyer.block_lot || "";
+      document.getElementById("f-title-no").value = buyer.title_no || "";
+      document.getElementById("f-tin-principal").value = buyer.tin_principal || "";
+      document.getElementById("f-tin-spouse").value = buyer.tin_spouse || "";
+
+      document.getElementById("f-consideration").value = buyer.consideration || "";
+      document.getElementById("f-loanable").value = buyer.loanable_amount || "";
+      document.getElementById("f-interest-rate").value = buyer.interest_rate || 0.0625;
+      document.getElementById("f-loan-term").value = buyer.loan_term_years || 30;
+      document.getElementById("f-repricing").value = buyer.repricing_years || 1;
+      document.getElementById("f-mri").value = buyer.mri_sri || "";
+      document.getElementById("f-nonlife").value = buyer.non_life || "";
+      document.getElementById("f-pi").value = buyer.principal_interest || "";
+
+      document.getElementById("f-techdesc").value = buyer.tech_desc || "";
+      document.getElementById("f-techdesc-cont").value = buyer.tech_desc_cont || "";
+
+      document.getElementById("f-date-notarization").value = buyer.date_notarization || "";
+      document.getElementById("f-notary-cts").value = buyer.notary_cts || "";
+      document.getElementById("f-aif").value = buyer.attorney_in_fact || "";
+      document.getElementById("f-aif-rel").value = buyer.attorney_in_fact_rel || "";
+
+      recalculateEquity();
+      updateProgramBadge();
+      updateTechDescPreview();
+      renderFormsList();
+      renderBuyerList();
+    }
+
+    function updateCurrentField(key, value) {
+      if (!buyersData[currentBuyerIndex]) return;
+      buyersData[currentBuyerIndex][key] = value;
+      if (key === 'principal_borrower') {
+        document.getElementById("view-principal-name").textContent = value || "UNTITLED";
+      }
+    }
+
+    function recalculateEquity() {
+      const price = parseFloat(document.getElementById("f-consideration").value) || 0;
+      const loan = parseFloat(document.getElementById("f-loanable").value) || 0;
+      const equity = Math.max(0, price - loan);
+      document.getElementById("f-equity").value = "₱ " + equity.toLocaleString('en-US', { minimumFractionDigits: 2 });
+      document.getElementById("amount-words-preview").textContent = amountToWords(loan);
+    }
+
+    function updateProgramBadge() {
+      const loan = parseFloat(document.getElementById("f-loanable").value) || 0;
+      const badge = document.getElementById("program-badge");
+      if (loan < 950000) {
+        badge.className = "badge badge-affordable";
+        badge.textContent = "Affordable Housing Program (< ₱950,000)";
+      } else {
+        badge.className = "badge badge-enduser";
+        badge.textContent = "End-User Home Financing Program (≥ ₱950,000)";
+      }
+      renderFormsList();
+    }
+
+    // --- Buyer helpers (same rules as engine/models.py and engine/rules.py) ---
+
+    // 'BLOCK 7 LOT 14', 'BLK 7, LT 14' or 'B7 L14' -> [block, lot].
+    // Keywords must start a word, so the 'L' inside 'BLOCK' is never read as 'Lot'.
+    function parseBlockLot(str) {
+      if (!str) return ["", ""];
+      const bm = String(str).match(/\b(?:block|blk|b)\.?\s*(?:no\.?\s*)?([0-9][0-9a-z-]*)/i);
+      const lm = String(str).match(/\b(?:lot|lt|l)\.?\s*(?:no\.?\s*)?([0-9][0-9a-z-]*)/i);
+      return [bm ? bm[1] : "", lm ? lm[1] : ""];
+    }
+
+    // 'Married to MARIA DELA CRUZ' -> { married: true, spouse: 'MARIA DELA CRUZ' }
+    function parseMaritalStatus(str) {
+      const s = (str || "").trim();
+      const m = s.match(/^married\s+to\s+(.+)/i);
+      if (m) return { married: true, spouse: m[1].trim() };
+      return { married: /^married/i.test(s), spouse: "" };
+    }
+
+    function hasCoBorrower(b) {
+      const c = (b.co_borrower || "").trim().toUpperCase();
+      return !!c && c !== "N/A" && c !== "NONE";
+    }
+
+    // Signatory names in slot order: [principal, principal's spouse, co-borrower, co-borrower's spouse].
+    // A blank string means nobody signs in that slot.
+    function getSignatories(b) {
+      const p = parseMaritalStatus(b.status);
+      const spouse = p.married ? p.spouse.toUpperCase() : "";
+      const co = hasCoBorrower(b) ? b.co_borrower.trim().toUpperCase() : "";
+      let coSpouse = "";
+      if (co) {
+        const c = parseMaritalStatus(b.co_borrower_status);
+        if (c.married) coSpouse = c.spouse.toUpperCase();
+      }
+      return [(b.principal_borrower || "").trim().toUpperCase(), spouse, co, coSpouse];
+    }
+
+    function fullTechDesc(b) {
+      const p1 = (b.tech_desc || "").trim();
+      const p2 = (b.tech_desc_cont || "").trim();
+      return p1 && p2 ? `${p1}\n${p2}` : (p1 || p2);
+    }
+
+    function areaToWords(sqm) {
+      if (!sqm || isNaN(sqm) || sqm <= 0) return "";
+      const n = Math.round(sqm);
+      return `${integerToWords(n)} (${n}) SQUARE METERS more or less.`;
+    }
+
+    // Short form for the DAS and LMAs. Anything missing from the description stays blank:
+    // never print another lot's survey plan, LRC record or area.
+    function extractShortTechDesc(full, blockNo, lotNo, lotArea) {
+      let survey = "", portion = "", lrc = "", area = "";
+      (full || "").split(/\r?\n/).forEach(line => {
+        const l = line.trim();
+        const val = () => l.split(":").slice(1).join(":").trim();
+        if (/survey\s*plan\s*(?:no\.?)?\s*:/i.test(l)) survey = val();
+        else if (/portion\s*of\s*lot\s*:/i.test(l)) portion = val();
+        else if (/lrc\s*record\s*(?:no\.?)?\s*:/i.test(l)) lrc = val();
+        else if (/area\s*:/i.test(l)) area = val();
+      });
+      if (!portion && blockNo && lotNo) portion = `BLOCK ${blockNo}, LOT ${lotNo}`;
+      if (!area) area = areaToWords(lotArea);
+      return [
+        `Survey Plan No. : ${survey}`,
+        `Block No. : ${blockNo}    Lot No. : ${lotNo}`,
+        `Portion of Lot  : ${portion}`,
+        `LRC Record No.  : ${lrc}`,
+        `Area            : ${area}`
+      ].map(s => s.trimEnd()).join("\n");
+    }
+
+    function updateTechDescPreview() {
+      const b = buyersData[currentBuyerIndex];
+      if (!b) return;
+      const [bNo, lNo] = parseBlockLot(b.block_lot);
+      document.getElementById("f-techdesc-short").value = extractShortTechDesc(fullTechDesc(b), bNo, lNo, b.lot_area);
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function handleSearch(query) {
+      const q = (query || "").toLowerCase().trim();
+      if (!q) {
+        renderBuyerList();
+        return;
+      }
+      const filtered = buyersData.filter(b => 
+        (b.principal_borrower || "").toLowerCase().includes(q) ||
+        (b.co_borrower || "").toLowerCase().includes(q) ||
+        (b.block_lot || "").toLowerCase().includes(q) ||
+        (b.title_no || "").toLowerCase().includes(q)
+      );
+      renderBuyerList(filtered);
+    }
+
+    function addNewBuyerManually() {
+      // A new buyer starts blank; only the Pag-IBIG program terms get their standard values
+      const newB = {
+        row_idx: buyersData.length + 2,
+        principal_borrower: "", status: "", co_borrower: "", co_borrower_status: "",
+        address: "", block_lot: "", title_no: "", tech_desc: "", tech_desc_cont: "",
+        interest_rate: 0.0625, consideration: 0, loanable_amount: 0,
+        loan_term_years: 30, repricing_years: 1,
+        mri_sri: 0, non_life: 0, principal_interest: 0,
+        notary_cts: "", date_notarization: "",
+        tin_principal: "", tin_co_borrower: "", tin_spouse: "",
+        attorney_in_fact: "", attorney_in_fact_rel: "",
+        house_type: "", lot_area: 0, email: ""
+      };
+      buyersData.push(newB);
+      renderBuyerList();
+      selectBuyer(buyersData.length - 1);
+    }
+
+    function saveCurrentBuyerToMemory() {
+      renderBuyerList();
+      alert("✓ Buyer details updated in browser memory!");
+    }
+
+    // --- Forms List Rendering ---
+    function renderFormsList() {
+      const stage = document.getElementById("stage-selector").value;
+      const b = buyersData[currentBuyerIndex] || {};
+      const isAffordable = (b.loanable_amount || 0) < 950000;
+      const container = document.getElementById("forms-grid-container");
+      container.innerHTML = "";
+
+      let forms = [];
+      if (stage === "PRE-APPROVAL") {
+        forms = [
+          { name: "Contract-to-Sell (HLF-161)", code: "HLF-161" },
+          { name: "Deed of Assignment (HLF-524)", code: "HLF-524" },
+          { name: "HLA Acknowledgement Receipt (HLF-785)", code: "HLF-785" },
+          { name: "MSVS (HLF-063)", code: "HLF-063" },
+          { name: "CIBI / Data Privacy Auth", code: "CIBI" },
+          { name: "Borrower's Validation Sheet (HLF-058)", code: "HLF-058" }
+        ];
+        if (b.attorney_in_fact && b.attorney_in_fact.trim()) {
+          forms.push({ name: "ARIS (HLF-913)", code: "HLF-913" });
+        }
+      } else {
+        forms = [
+          { name: "Deed of Absolute Sale (HLF-525)", code: "HLF-525" },
+          isAffordable 
+            ? { name: "Loan & Mortgage Agreement (HLF-163)", code: "HLF-163" }
+            : { name: "Loan & Mortgage Agreement (HLF-162)", code: "HLF-162" },
+          isAffordable
+            ? { name: "Promissory Note (HLF-087)", code: "HLF-087" }
+            : { name: "Promissory Note (HLF-086)", code: "HLF-086" },
+          { name: "Cert. of House & Lot Acceptance", code: "HLA-ACCEPT" },
+          { name: "Certificate of Acceptance (HLF-083)", code: "HLF-083" },
+          { name: "Buyer's Conformity (HLF-371)", code: "HLF-371" }
+        ];
+      }
+
+      forms.forEach(f => {
+        const card = document.createElement("div");
+        card.className = "form-item-card";
+        card.innerHTML = `
+          <div>
+            <div class="form-item-title">${f.name}</div>
+            <span style="font-size: 10px; color: var(--text-dim);">${f.code}</span>
+          </div>
+          <button class="btn btn-secondary" style="font-size: 11px; padding: 5px 10px;" onclick="downloadSingleForm('${f.code}', '${f.name}')">
+            <i class="fi fi-rs-download" aria-hidden="true"></i> PDF
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // --- PDF Generation with PDF-Lib (Shared Coordinates & Rules) ---
+
+    // Same slots as engine/template_provider.py: (center x, baseline y, label)
+    const SIGNATURE_SLOTS = [
+      [150, 203, "PRINCIPAL BORROWER"],
+      [450, 203, "SPOUSE OF PRINCIPAL BORROWER"],
+      [150, 158, "CO-BORROWER"],
+      [450, 158, "SPOUSE OF CO-BORROWER"]
+    ];
+    // CTS, DOA, DAS, both LMAs and both PNs
+    const MULTI_SIGNATORY_FORMS = ["HLF-161", "HLF-524", "HLF-525", "HLF-163", "HLF-162", "HLF-087", "HLF-086"];
+
+    // The standard fonts use WinAnsi, which has Ñ/ñ and other Latin-1 letters. pdf-lib throws on
+    // anything outside it, so such characters fall back to their base letter (or are dropped).
+    function pdfSafe(text, font) {
+      const charset = new Set(font.getCharacterSet());
+      return Array.from(String(text || "")).map(ch => {
+        if (ch === "\n" || charset.has(ch.codePointAt(0))) return ch;
+        const base = ch.normalize("NFD")[0];
+        return charset.has(base.codePointAt(0)) ? base : "";
+      }).join("");
+    }
+    async function generatePdfBytes(formCode, formName, buyer) {
+      const pdfDoc = await PDFLib.PDFDocument.create();
+      const helvetica = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
+      const helveticaBold = await pdfDoc.embedFont(PDFLib.StandardFonts.HelveticaBold);
+      const courier = await pdfDoc.embedFont(PDFLib.StandardFonts.Courier);
+
+      const pageCount = formCode === "HLF-161" || formCode === "HLF-163" || formCode === "HLF-162" ? 4 : (formCode === "HLF-524" || formCode === "HLF-525" || formCode === "HLF-087" || formCode === "HLF-086" ? 2 : 1);
+
+      for (let pIdx = 0; pIdx < pageCount; pIdx++) {
+        const page = pdfDoc.addPage([612, 792]);
+        const { width, height } = page.getSize();
+
+        // Standard Header
+        page.drawText("PAG-IBIG FUND", { x: 240, y: 755, size: 11, font: helveticaBold });
+        page.drawText("(HOME DEVELOPMENT MUTUAL FUND)", { x: 215, y: 742, size: 8, font: helvetica });
+        page.drawText(formName.toUpperCase(), { x: 180, y: 726, size: 11, font: helveticaBold });
+        page.drawText(`FORM HQP-${formCode} (Page ${pIdx + 1} of ${pageCount})`, { x: 440, y: 760, size: 7, font: helvetica });
+
+        page.drawLine({ start: { x: 40, y: 715 }, end: { x: 572, y: 715 }, thickness: 1 });
+        page.drawLine({ start: { x: 40, y: 45 }, end: { x: 572, y: 45 }, thickness: 0.5 });
+        page.drawText("SUMMERFIELD RESOURCES CORP. · BLOOMFIELD TERRACES", { x: 40, y: 32, size: 6.5, font: helvetica });
+
+        // Side margins: every signatory's name printed vertically on pages without signatures,
+        // each followed by room to sign; shrunk to fit so long names never overlap
+        if (pIdx < pageCount - 1 && (formCode === "HLF-161" || formCode === "HLF-524" || formCode === "HLF-525" || formCode === "HLF-163" || formCode === "HLF-162")) {
+          const sideNames = getSignatories(buyer).filter(n => n).map(n => pdfSafe(n, helveticaBold));
+          let size = 7.5, gap = 60;
+          const yStart = 120, yEnd = height - 100;
+          let widths = sideNames.map(n => helveticaBold.widthOfTextAtSize(n, size));
+          const needed = widths.reduce((a, w) => a + w, 0) + gap * (sideNames.length - 1);
+          if (needed > yEnd - yStart) {
+            const scale = (yEnd - yStart) / needed;
+            size *= scale; gap *= scale;
+            widths = widths.map(w => w * scale);
+          }
+          let curY = yStart;
+          sideNames.forEach((n, i) => {
+            page.drawText(n, { x: 24, y: curY, size, font: helveticaBold, rotate: PDFLib.degrees(90) });
+            curY += widths[i] + gap;
+          });
+        }
+
+        // Overlay specific fields
+        if (pIdx === 0) {
+          page.drawText("I. PARTIES AND PROPERTY DESCRIPTION", { x: 45, y: 695, size: 9, font: helveticaBold });
+          page.drawText("Principal Borrower:", { x: 45, y: 675, size: 8, font: helvetica });
+          page.drawText(pdfSafe((buyer.principal_borrower || "").toUpperCase(), helveticaBold), { x: 140, y: 675, size: 8.5, font: helveticaBold });
+
+          page.drawText("Marital Status:", { x: 375, y: 675, size: 8, font: helvetica });
+          page.drawText(pdfSafe((buyer.status || "").toUpperCase(), helvetica), { x: 445, y: 675, size: 8, font: helvetica });
+
+          page.drawText("Present Address:", { x: 45, y: 615, size: 8, font: helvetica });
+          page.drawText(pdfSafe((buyer.address || "").toUpperCase(), helvetica), { x: 140, y: 615, size: 8, font: helvetica });
+
+          page.drawText("Block & Lot:", { x: 375, y: 595, size: 8, font: helvetica });
+          page.drawText(pdfSafe((buyer.block_lot || "").toUpperCase(), helveticaBold), { x: 445, y: 595, size: 8.5, font: helveticaBold });
+
+          // Technical description (Courier 8.5pt, 2 inches from left edge = 144pt)
+          page.drawText("TECHNICAL DESCRIPTION:", { x: 45, y: 480, size: 8.5, font: helveticaBold });
+          // DAS and both LMAs carry the short form; the other forms the full description
+          const [bNo, lNo] = parseBlockLot(buyer.block_lot);
+          const techText = ["HLF-525", "HLF-163", "HLF-162"].includes(formCode)
+            ? extractShortTechDesc(fullTechDesc(buyer), bNo, lNo, buyer.lot_area)
+            : fullTechDesc(buyer);
+          page.drawText(pdfSafe(techText, courier), { x: 144, y: 460, size: 8.5, font: courier, lineHeight: 11 });
+        }
+
+        if (pIdx === pageCount - 1) {
+          page.drawText("CONFORME / SIGNATURE:", { x: 45, y: 230, size: 8.5, font: helveticaBold });
+          // CTS, DOA, DAS, LMA and PN: principal, spouse, co-borrower and co-borrower's spouse all sign.
+          // Other forms carry the principal borrower only.
+          const names = MULTI_SIGNATORY_FORMS.includes(formCode) ? getSignatories(buyer) : [getSignatories(buyer)[0]];
+          names.forEach((name, i) => {
+            const [sx, sy, label] = SIGNATURE_SLOTS[i];
+            const centered = (t, f, sz, y) =>
+              page.drawText(t, { x: sx - f.widthOfTextAtSize(t, sz) / 2, y, size: sz, font: f });
+            if (name) {
+              let n = pdfSafe(name, helveticaBold), sz = 8.5;
+              const w = helveticaBold.widthOfTextAtSize(n, sz);
+              if (w > 195) sz *= 195 / w;
+              centered(n, helveticaBold, sz, sy);
+            }
+            page.drawLine({ start: { x: sx - 100, y: sy - 3 }, end: { x: sx + 100, y: sy - 3 }, thickness: 0.5 });
+            centered(label, helvetica, 7, sy - 13);
+          });
+        }
+      }
+
+      return await pdfDoc.save();
+    }
+
+    async function downloadSingleForm(code, name) {
+      const buyer = buyersData[currentBuyerIndex];
+      const pdfBytes = await generatePdfBytes(code, name, buyer);
+      const surname = extractSurname(buyer.principal_borrower);
+      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${name} - ${surname}.pdf`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function generateAllFormsZip() {
+      const buyer = buyersData[currentBuyerIndex];
+      const stage = document.getElementById("stage-selector").value;
+      const surname = extractSurname(buyer.principal_borrower);
+      const zip = new JSZip();
+
+      const forms = stage === "PRE-APPROVAL" ? [
+        { code: "HLF-161", name: "Contract-to-Sell" },
+        { code: "HLF-524", name: "Deed of Assignment" },
+        { code: "HLF-785", name: "HLA Acknowledgement Receipt" },
+        { code: "HLF-063", name: "MSVS" },
+        { code: "CIBI", name: "CIBI - Data Privacy Auth" },
+        { code: "HLF-058", name: "Borrowers Validation Sheet" }
+      ] : [
+        { code: "HLF-525", name: "Deed of Absolute Sale" },
+        { code: "HLF-163", name: "Loan and Mortgage Agreement" },
+        { code: "HLF-087", name: "Promissory Note" },
+        { code: "HLA-ACCEPT", name: "Cert of House and Lot Acceptance" },
+        { code: "HLF-083", name: "Certificate of Acceptance" },
+        { code: "HLF-371", name: "Buyers Conformity" }
+      ];
+
+      for (let f of forms) {
+        const bytes = await generatePdfBytes(f.code, f.name, buyer);
+        zip.file(`${f.name} - ${surname}.pdf`, bytes);
+      }
+
+      const content = await zip.generateAsync({ type: "blob" });
+      const url = URL.createObjectURL(content);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${buyer.principal_borrower} - ${stage} Forms.zip`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // --- PDF.js Live Canvas Preview ---
+    async function previewCurrentForm() {
+      const buyer = buyersData[currentBuyerIndex];
+      const bytes = await generatePdfBytes("HLF-161", "Contract-to-Sell", buyer);
+      const loadingTask = pdfjsLib.getDocument({ data: bytes });
+      currentPdfDoc = await loadingTask.promise;
+      currentPdfPageIdx = 1;
+      renderCurrentPdfPage();
+    }
+
+    async function renderCurrentPdfPage() {
+      if (!currentPdfDoc) return;
+      const page = await currentPdfDoc.getPage(currentPdfPageIdx);
+      const canvas = document.getElementById("pdf-canvas");
+      const ctx = canvas.getContext("2d");
+      const viewport = page.getViewport({ scale: 1.35 });
+
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      document.getElementById("page-num-indicator").textContent = `Page ${currentPdfPageIdx} of ${currentPdfDoc.numPages}`;
+
+      await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+    }
+
+    function prevPdfPage() {
+      if (currentPdfDoc && currentPdfPageIdx > 1) {
+        currentPdfPageIdx--;
+        renderCurrentPdfPage();
+      }
+    }
+
+    function nextPdfPage() {
+      if (currentPdfDoc && currentPdfPageIdx < currentPdfDoc.numPages) {
+        currentPdfPageIdx++;
+        renderCurrentPdfPage();
+      }
+    }
+
+    // --- Excel Import & Export via SheetJS ---
+    function handleExcelUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+
+        if (rows.length > 1) {
+          buyersData = [];
+          for (let i = 1; i < rows.length; i++) {
+            const r = rows[i];
+            if (!r[0]) continue;
+            buyersData.push({
+              row_idx: i + 1,
+              principal_borrower: r[0] || "",
+              status: r[1] || "Single",
+              co_borrower: r[2] || "N/A",
+              address: r[3] || "",
+              block_lot: r[4] || "",
+              title_no: r[5] || "",
+              tech_desc: r[6] || "",
+              interest_rate: parseFloat(r[7]) || 0.0625,
+              consideration: parseFloat(r[8]) || 0,
+              loanable_amount: parseFloat(r[9]) || 0,
+              tech_desc_cont: r[10] || "",
+              notary_cts: r[11] || "",
+              tin_principal: r[12] || "",
+              tin_co_borrower: r[13] || "",
+              tin_spouse: r[14] || "",
+              date_notarization: r[15] || "",
+              loan_term_years: parseInt(r[16]) || 30,
+              repricing_years: parseInt(r[17]) || 1,
+              mri_sri: parseFloat(r[18]) || 0,
+              non_life: parseFloat(r[19]) || 0,
+              principal_interest: parseFloat(r[20]) || 0,
+              attorney_in_fact: r[21] || "",
+              attorney_in_fact_rel: r[23] || "",
+              house_type: r[24] || "TOWNHOUSE",
+              lot_area: parseFloat(r[25]) || 0,
+              email: r[28] || ""
+            });
+          }
+          renderBuyerList();
+          selectBuyer(0);
+          alert(`✓ Loaded ${buyersData.length} buyers from Excel!`);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    function exportExcel() {
+      const headers = [
+        "Principal Borrower", "Status", "Co Borrower", "Address", "Block & Lot", "Title Number",
+        "Technical Description", "Interest rate", "Consideration", "Loanable amount",
+        "Technical description (continued)", "Notary of CTS", "TIN principal", "TIN co-borrower", "TIN spouse",
+        "Date of Notarization", "Loan Term (years)", "Re-pricing (years)", "MRI/SRI", "Non-Life",
+        "Principal & Interest", "Attorney-in-Fact", "Co Attorney-in-Fact", "Attorney-in-Fact Relationship",
+        "House Type", "Lot Area (sqm)", "Co Borrower status", "Co Borrower address", "Email"
+      ];
+
+      const rows = [headers];
+      buyersData.forEach(b => {
+        rows.push([
+          b.principal_borrower, b.status, b.co_borrower, b.address, b.block_lot, b.title_no,
+          b.tech_desc, b.interest_rate, b.consideration, b.loanable_amount,
+          b.tech_desc_cont, b.notary_cts, b.tin_principal, b.tin_co_borrower, b.tin_spouse,
+          b.date_notarization, b.loan_term_years, b.repricing_years, b.mri_sri, b.non_life,
+          b.principal_interest, b.attorney_in_fact, "", b.attorney_in_fact_rel,
+          b.house_type, b.lot_area, b.co_borrower_status, "", b.email
+        ]);
+      });
+
+      const ws = XLSX.utils.aoa_to_sheet(rows);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Buyers");
+      XLSX.writeFile(wb, "BookData_Updated.xlsx");
+    }
+
+    // --- Settings Storage ---
+    function openSettingsModal() { document.getElementById("settings-modal").classList.add("show"); }
+    function closeSettingsModal() { document.getElementById("settings-modal").classList.remove("show"); }
+    // The API key is kept only for this browser tab (sessionStorage), never saved to disk.
+    const API_KEY_SLOT = "pagibig_api_key_session";
+    function safeStorage(storeName, action, key, value) {
+      try {
+        // Even reading window.localStorage can throw when storage is blocked
+        const store = window[storeName];
+        if (action === "get") return store.getItem(key);
+        if (action === "set") store.setItem(key, value);
+        if (action === "remove") store.removeItem(key);
+      } catch (e) { /* storage blocked: the key simply isn't remembered */ }
+      return null;
+    }
+    function saveSettings() {
+      safeStorage("localStorage", "set", "pagibig_dev_name", document.getElementById("s-dev-name").value);
+      safeStorage("localStorage", "set", "pagibig_dev_rep", document.getElementById("s-dev-rep").value);
+      const key = document.getElementById("s-api-key").value.trim();
+      if (key) safeStorage("sessionStorage", "set", API_KEY_SLOT, key);
+      else safeStorage("sessionStorage", "remove", API_KEY_SLOT);
+      closeSettingsModal();
+      alert("Settings saved!");
+    }
+    function loadSettings() {
+      // Older versions kept the key in localStorage permanently: move it to this tab only
+      const legacy = safeStorage("localStorage", "get", "pagibig_api_key");
+      if (legacy) {
+        safeStorage("sessionStorage", "set", API_KEY_SLOT, legacy);
+        safeStorage("localStorage", "remove", "pagibig_api_key");
+      }
+      const apiKey = safeStorage("sessionStorage", "get", API_KEY_SLOT);
+      if (apiKey) document.getElementById("s-api-key").value = apiKey;
+    }
+
+    // --- HLA Scan Modal ---
+    function openHlaModal() { document.getElementById("hla-modal").classList.add("show"); }
+    function closeHlaModal() { document.getElementById("hla-modal").classList.remove("show"); }
+
+    // Reads the uploaded HLA with Claude through the official Anthropic SDK (same prompt and
+    // field whitelist as the desktop app). Files go straight from this browser to api.anthropic.com.
+    const ANTHROPIC_SDK_URL = "https://cdn.jsdelivr.net/npm/@anthropic-ai/sdk@0.131.0/+esm";
+    const HLA_MODEL = "claude-opus-5-5";
+    const HLA_PROMPT_VERBATIM =
+      'These images are a Philippine Pag-IBIG Fund HOUSING LOAN APPLICATION ' +
+      '(form HQP-HLF-068, sometimes with a co-borrower form HQP-HLF-069). ' +
+      'Entries are often handwritten. Read them carefully and reply with ONLY one ' +
+      'JSON object with these keys (use "" when not shown or unreadable; never guess): ' +
+      'A (borrower FIRST MIDDLE LAST-EXT in capitals), B ("Single" or "Married to " + ' +
+      'spouse full name; else status as ticked), C (co-borrower in capitals, else "N/A"), ' +
+      'coStatus, D (present address on one line in capitals), E ("BLOCK n LOT n"), ' +
+      'J (desired loan amount as a number), M, N, O (TINs exactly as written), ' +
+      'termYears, repricing, houseType, lotArea, email, ' +
+      'flags (array of short notes about anything unreadable, incomplete or worth checking).';
+    const HLA_ALLOWED_KEYS = ["A", "B", "C", "coStatus", "D", "E", "J", "M", "N", "O",
+      "termYears", "repricing", "houseType", "lotArea", "email", "flags"];
+    const MAX_IMAGE_EDGE = 2000;            // keeps handwriting legible without oversized uploads
+    const MAX_IMAGE_BYTES = 5 * 1024 * 1024; // API limit per image
+    const MAX_PDF_BYTES = 30 * 1024 * 1024;  // stays under the 32 MB request limit
+
+    // Some embedded browsers refuse to import the SDK module straight from the CDN, so if
+    // that fails, the same pinned file is fetched and imported from a local blob instead.
+    async function loadAnthropicSdk() {
+      try {
+        return (await import(ANTHROPIC_SDK_URL)).default;
+      } catch (directError) {
+        const source = await (await fetch(ANTHROPIC_SDK_URL)).text();
+        const absolute = source.replace(/"\/npm\//g, '"https://cdn.jsdelivr.net/npm/');
+        const url = URL.createObjectURL(new Blob([absolute], { type: "text/javascript" }));
+        try {
+          return (await import(url)).default;
+        } finally {
+          URL.revokeObjectURL(url);
+        }
+      }
+    }
+
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",")[1]);
+        reader.onerror = () => reject(new Error(`Could not read ${file.name}`));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Photos are turned upright (browsers apply EXIF rotation when decoding), scaled down and re-encoded as JPEG.
+    async function imageFileToJpegBase64(file) {
+      let bitmap;
+      try {
+        bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
+      } catch (e) {
+        throw new Error(`${file.name} is not a photo this browser can open (use JPG or PNG).`);
+      }
+      const scale = Math.min(1, MAX_IMAGE_EDGE / Math.max(bitmap.width, bitmap.height));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(bitmap.width * scale);
+      canvas.height = Math.round(bitmap.height * scale);
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+      bitmap.close();
+      const b64 = canvas.toDataURL("image/jpeg", 0.85).split(",")[1];
+      if (b64.length * 0.75 > MAX_IMAGE_BYTES) {
+        throw new Error(`${file.name} is still larger than 5 MB after resizing. Retake the photo at a lower resolution.`);
+      }
+      return b64;
+    }
+
+    async function buildHlaContent(files) {
+      const blocks = [];
+      for (const file of files) {
+        const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
+        if (isPdf) {
+          if (file.size > MAX_PDF_BYTES) throw new Error(`${file.name} is larger than 30 MB.`);
+          blocks.push({ type: "document", source: { type: "base64", media_type: "application/pdf", data: await readFileAsBase64(file) } });
+        } else if (file.type.startsWith("image/")) {
+          blocks.push({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: await imageFileToJpegBase64(file) } });
+        }
+      }
+      if (blocks.length === 0) throw new Error("Choose HLA photos (JPG/PNG) or a PDF.");
+      blocks.push({ type: "text", text: HLA_PROMPT_VERBATIM });
+      return blocks;
+    }
+
+    function parseHlaJson(text) {
+      const match = text.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error("The reply did not contain the expected details. Please try again or type them manually.");
+      const parsed = JSON.parse(match[0]);
+      const cleaned = {};
+      for (const k of HLA_ALLOWED_KEYS) cleaned[k] = parsed[k] ?? (k === "flags" ? [] : "");
+      let flags = Array.isArray(cleaned.flags) ? cleaned.flags.map(String) : (cleaned.flags ? [String(cleaned.flags)] : []);
+      // The HLA shows the amount the buyer wants; the approved loanable amount is typed by staff.
+      const desired = parseFloat(String(cleaned.J).replace(/[^0-9.]/g, ""));
+      if (desired > 0) {
+        flags.push(`HLA desired loan amount: ₱ ${desired.toLocaleString("en-PH", { minimumFractionDigits: 2 })}. Enter the APPROVED loanable amount yourself.`);
+      }
+      return { data: cleaned, flags };
+    }
+
+    function hlaText(value, fallback = "") {
+      const s = String(value ?? "").trim();
+      return s || fallback;
+    }
+    function hlaNumber(value, fallback) {
+      const n = parseFloat(String(value ?? "").replace(/[^0-9.]/g, ""));
+      return Number.isFinite(n) && n > 0 ? n : fallback;
+    }
+
+    function setHlaStatus(message, color) {
+      const statusDiv = document.getElementById("hla-status");
+      statusDiv.style.display = "block";
+      statusDiv.style.color = color;
+      statusDiv.textContent = message;
+    }
+
+    async function processHlaScan() {
+      const files = Array.from(document.getElementById("hla-file-input").files || []);
+      if (files.length === 0) {
+        alert("Please choose at least one photo or PDF.");
+        return;
+      }
+      const apiKey = (safeStorage("sessionStorage", "get", API_KEY_SLOT) || document.getElementById("s-api-key").value || "").trim();
+      if (!apiKey) {
+        setHlaStatus("Enter your Anthropic API key in Settings first.", "#B91C1C");
+        return;
+      }
+
+      const scanButton = document.querySelector("#hla-modal .btn-primary");
+      scanButton.disabled = true;
+      setHlaStatus("Reading the HLA… this can take up to a minute.", "var(--accent-amber)");
+
+      let Anthropic;
+      try {
+        const content = await buildHlaContent(files);
+        Anthropic = await loadAnthropicSdk();
+        // The key belongs to this staff member and stays in this tab; the browser sends it only to api.anthropic.com.
+        const client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true, timeout: 180000, maxRetries: 2 });
+        const response = await client.beta.messages.create({
+          model: HLA_MODEL,
+          max_tokens: 16000,
+          // If a safety check declines the request, the API retries on a fallback model
+          betas: ["server-side-fallback-2026-07-01"],
+          fallbacks: "default",
+          messages: [{ role: "user", content }],
+        });
+        if (response.stop_reason === "refusal") {
+          throw new Error("The model declined to read these files. Please type the details manually.");
+        }
+        const text = response.content.filter(b => b.type === "text").map(b => b.text).join("");
+        const { data, flags } = parseHlaJson(text);
+
+        const scannedBuyer = {
+          row_idx: buyersData.length + 2,
+          principal_borrower: hlaText(data.A),
+          status: hlaText(data.B, "Single"),
+          co_borrower: hlaText(data.C, "N/A"),
+          co_borrower_status: hlaText(data.coStatus),
+          address: hlaText(data.D),
+          block_lot: hlaText(data.E),
+          title_no: "", tech_desc: "", tech_desc_cont: "",
+          interest_rate: 0.0625, consideration: 0,
+          loanable_amount: 0, // approved amount: typed by staff
+          loan_term_years: Math.round(hlaNumber(data.termYears, 30)),
+          repricing_years: Math.round(hlaNumber(data.repricing, 1)),
+          mri_sri: 0, non_life: 0, principal_interest: 0,
+          notary_cts: "", date_notarization: "",
+          tin_principal: hlaText(data.M), tin_co_borrower: hlaText(data.N), tin_spouse: hlaText(data.O),
+          attorney_in_fact: "", attorney_in_fact_rel: "",
+          house_type: hlaText(data.houseType, "TOWNHOUSE"),
+          lot_area: hlaNumber(data.lotArea, 36),
+          email: hlaText(data.email)
+        };
+        buyersData.push(scannedBuyer);
+        renderBuyerList();
+        selectBuyer(buyersData.length - 1);
+        document.getElementById("hla-file-input").value = "";
+        document.getElementById("hla-status").style.display = "none";
+        closeHlaModal();
+        const flagText = flags.length ? "\n• " + flags.join("\n• ") : " None.";
+        alert(`HLA read: ${scannedBuyer.principal_borrower || "(name unreadable)"}\n\nPlease check:${flagText}`);
+      } catch (err) {
+        let message = err && err.message ? err.message : String(err);
+        if (Anthropic) {
+          if (err instanceof Anthropic.AuthenticationError) message = "The Anthropic API key was rejected. Check it in Settings.";
+          else if (err instanceof Anthropic.NotFoundError) message = `Model '${HLA_MODEL}' was not found.`;
+          else if (err instanceof Anthropic.RateLimitError) message = "Too many requests to the Anthropic API. Wait a minute and try again.";
+          else if (err instanceof Anthropic.APIConnectionError) message = "Could not reach api.anthropic.com. Check the internet connection.";
+          else if (err instanceof Anthropic.APIError) message = `Anthropic API error (${err.status}): ${err.message}`;
+        } else if (/import|module|fetch/i.test(message)) {
+          message = "Could not load the Anthropic library. Check the internet connection.";
+        }
+        setHlaStatus(message, "#B91C1C");
+      } finally {
+        scanButton.disabled = false;
+      }
+    }
+
+    window.onload = () => {
+      initApp();
+      previewCurrentForm();
+    };
+  </script>
+</body>
+</html>

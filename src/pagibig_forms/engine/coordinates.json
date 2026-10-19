@@ -1,0 +1,131 @@
+{
+  "project_defaults": {
+    "subdivision": "BLOOMFIELD TERRACES",
+    "barangay": "Brgy. Maybancal",
+    "municipality": "Morong",
+    "province": "Rizal",
+    "project_address": "BLOOMFIELD TERRACES, Brgy. Maybancal, Morong, Rizal",
+    "developer_name": "SUMMERFIELD RESOURCES CORPORATION",
+    "developer_rep": "JENNIFER B. PEDUCA",
+    "developer_rep_title": "Owner / Head of Documentation",
+    "bvs_municipality": "MORONG, RIZAL",
+    "witnesses_affordable": ["DENIELLE S. TOLENTINO", "SALVACION M. AZCARRAGA"],
+    "witnesses_end_user": ["VALENTINO P. HALFON", "SALVACION M. AZCARRAGA"]
+  },
+  "forms": {
+    "CTS": {
+      "code": "HLF-161",
+      "name": "Contract-to-Sell",
+      "stage": "PRE-APPROVAL",
+      "pages": 4,
+      "tech_desc_type": "full",
+      "has_side_margins": true,
+      "page_signatures": [3]
+    },
+    "DOA": {
+      "code": "HLF-524",
+      "name": "Deed of Assignment",
+      "stage": "PRE-APPROVAL",
+      "pages": 2,
+      "tech_desc_type": "full",
+      "has_side_margins": true,
+      "page_signatures": [1]
+    },
+    "HLA_RECEIPT": {
+      "code": "HLF-785",
+      "name": "HLA Acknowledgement Receipt",
+      "stage": "PRE-APPROVAL",
+      "pages": 1,
+      "tech_desc_type": "none"
+    },
+    "MSVS": {
+      "code": "HLF-063",
+      "name": "Membership Status Verification Slip",
+      "stage": "PRE-APPROVAL",
+      "per_borrower": true,
+      "pages": 1
+    },
+    "CIBI": {
+      "code": "CIBI",
+      "name": "CIBI - Data Privacy Authorization",
+      "stage": "PRE-APPROVAL",
+      "per_borrower": true,
+      "pages": 1
+    },
+    "BVS": {
+      "code": "HLF-058",
+      "name": "Borrower's Validation Sheet",
+      "stage": "PRE-APPROVAL",
+      "per_borrower": true,
+      "pages": 1
+    },
+    "ARIS": {
+      "code": "HLF-913",
+      "name": "ARIS",
+      "stage": "PRE-APPROVAL",
+      "attorney_in_fact_only": true,
+      "pages": 1
+    },
+    "DAS": {
+      "code": "HLF-525",
+      "name": "Deed of Absolute Sale",
+      "stage": "POST-APPROVAL",
+      "pages": 2,
+      "tech_desc_type": "short",
+      "has_side_margins": true,
+      "page_signatures": [1]
+    },
+    "LMA_AFFORDABLE": {
+      "code": "HLF-163",
+      "name": "Loan and Mortgage Agreement (Affordable)",
+      "stage": "POST-APPROVAL",
+      "program": "affordable",
+      "pages": 4,
+      "tech_desc_type": "short",
+      "has_side_margins": true,
+      "page_signatures": [3]
+    },
+    "LMA_END_USER": {
+      "code": "HLF-162",
+      "name": "Loan and Mortgage Agreement (End-User)",
+      "stage": "POST-APPROVAL",
+      "program": "end_user",
+      "pages": 4,
+      "tech_desc_type": "short",
+      "has_side_margins": true,
+      "page_signatures": [3]
+    },
+    "PN_AFFORDABLE": {
+      "code": "HLF-087",
+      "name": "Promissory Note (Affordable)",
+      "stage": "POST-APPROVAL",
+      "program": "affordable",
+      "pages": 2
+    },
+    "PN_END_USER": {
+      "code": "HLF-086",
+      "name": "Promissory Note (End-User)",
+      "stage": "POST-APPROVAL",
+      "program": "end_user",
+      "pages": 2
+    },
+    "HOUSE_LOT_ACCEPTANCE": {
+      "code": "HLA-ACCEPT",
+      "name": "Certificate of House & Lot Acceptance",
+      "stage": "POST-APPROVAL",
+      "pages": 1
+    },
+    "ACCEPTANCE": {
+      "code": "HLF-083",
+      "name": "Certificate of Acceptance",
+      "stage": "POST-APPROVAL",
+      "pages": 1
+    },
+    "BUYERS_CONFORMITY": {
+      "code": "HLF-371",
+      "name": "Buyer's Conformity",
+      "stage": "POST-APPROVAL",
+      "pages": 1
+    }
+  }
+}
